@@ -111,9 +111,16 @@ function previewAssignment(){
  $('assignmentPreview').textContent='Saved: '+workflowLabel(item)+'. '+(team===teamFor(item.consultant)?'':'Preview: '+(team?'Assigned to '+team:'Architect review')+'. ' )+'Record ID: '+item.id;
 }
 $('consultant').onchange=previewAssignment;
-$('copyAssignment').onclick=async()=>{
+$('copyAssignment').onclick=()=>{
  const item=items.find(x=>x.id===currentItem);if(!item||!active(item))return;
- try{await navigator.clipboard.writeText(JSON.stringify(assignmentFields($('consultant').value),null,2));$('saveState').textContent='Copied. In GitHub, locate record '+item.id+' ('+item.project+' '+item.type+' '+item.number+'), replace its consultant and status fields, then commit. The assignment is not saved until you commit.'}catch{$('saveState').textContent='Clipboard unavailable. Set consultant to '+JSON.stringify($('consultant').value)+' and status to '+JSON.stringify(assignmentFields($('consultant').value).status)+' in record '+item.id+'.'}
+ const url=new URL('https://new-form-project-1319a1.zapier.app/');
+ url.searchParams.set('item_id',item.id);
+ url.searchParams.set('consultant_team',$('consultant').value||'Architect review only');
+ const opened=window.open(url.href,'_blank','noopener,noreferrer');
+ $('saveState').replaceChildren();
+ const message=document.createElement('span');message.textContent='Complete the assignment in the protected form. The saved status updates after processing. ';
+ const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open assignment form ↗';
+ $('saveState').append(message,link);
 };
 document.querySelectorAll('#form input,#form textarea').forEach(el=>el.readOnly=true);
 document.querySelectorAll('#form select:not(#consultant),#form input[type=checkbox]').forEach(el=>el.disabled=true);
