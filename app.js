@@ -86,14 +86,13 @@ function renderIssueContext(x){
  const target=$('issueContext');if(!target)return;
  target.replaceChildren();
  const fields=Array.isArray(x.contextFields)?x.contextFields.filter(f=>f&&typeof f.label==='string'&&typeof f.value==='string'&&f.value.trim()):[];
- const question=typeof x.question==='string'?x.question:typeof x.questions==='string'?x.questions:typeof x.questionText==='string'?x.questionText:'';
- const entries=fields.length?fields:question.trim()?[{label:'Question',value:question}]:[];
- if(!entries.length){
-  const note=document.createElement('p');note.className='source-date';
-  note.textContent=Object.hasOwn(x,'question')||Object.hasOwn(x,'contextFields')?'No additional question or context text was provided in Smartsheet.':'Question text has not yet been included in the source sync.';
-  target.append(note);return;
- }
- for(const field of entries){
+ const isQuestion=f=>/question/i.test(f.label)&&!/^questions?\s+for\s*:?$/i.test(f.label.trim());
+ const questionFields=fields.filter(isQuestion);
+ const question=typeof x.question==='string'?x.question:typeof x.questions==='string'?x.questions:typeof x.questionText==='string'?x.questionText:questionFields.map(f=>questionFields.length>1?f.label+'\n'+f.value:f.value).join('\n\n');
+ $('sourceQuestion').value=question;
+ const synced=['question','questions','questionText','contextFields'].some(key=>Object.hasOwn(x,key));
+ $('questionSyncStatus').textContent=question.trim()?'Text supplied by Smartsheet.':synced?'No question text was provided in the synced Smartsheet fields.':'Awaiting Smartsheet sync: question text is not included in the current feed.';
+ for(const field of fields.filter(f=>!isQuestion(f))){
   const section=document.createElement('section');section.className='issue-context-field';
   const title=document.createElement('h4');title.textContent=field.label;
   const body=document.createElement('div');body.className='issue-context-text';body.textContent=field.value;
