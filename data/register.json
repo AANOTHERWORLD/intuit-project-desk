@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": false,
-  "sourceUpdatedAt": "2026-10-29T01:14:53.262Z",
-  "lastSuccessfulSyncAt": "2026-10-29T01:14:53.262Z",
+  "sourceUpdatedAt": "2026-10-29T01:16:21.695Z",
+  "lastSuccessfulSyncAt": "2026-10-29T01:16:21.695Z",
   "refreshIntervalMinutes": 60,
   "filing": {
-    "connected": false,
+    "connected": true,
     "backfillPending": true,
-    "failedThisRun": 0
+    "failedThisRun": 10
   },
   "items": [
     {
@@ -360,7 +360,7 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
+      "pdfFiled": 1,
       "pdfStatus": "Pending filing or verification"
     },
     {
@@ -2362,8 +2362,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "ss-2468986770902916-4516565606727556",
@@ -2494,7 +2494,7 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 0,
+      "pdfFiled": 1,
       "pdfStatus": "Pending filing or verification"
     },
     {
@@ -2516,8 +2516,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "ss-2468986770902916-2264765793042308",
@@ -2582,8 +2582,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "ss-2468986770902916-3483573531836292",
@@ -2604,7 +2604,7 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 0,
+      "pdfFiled": 2,
       "pdfStatus": "Pending filing or verification"
     }
   ]
