@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-10-29T04:00:28.833Z",
-  "lastSuccessfulSyncAt": "2026-10-29T04:00:28.833Z",
+  "sourceUpdatedAt": "2026-10-29T05:00:32.240Z",
+  "lastSuccessfulSyncAt": "2026-10-29T05:00:32.240Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -712,8 +712,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-eeb8c4de7aa43629a1a8491a",
@@ -734,8 +734,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-017f393f4f711cfe4dc2fcd7",
@@ -756,8 +756,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-e69202c8b4fd4fc730673670",
@@ -778,7 +778,7 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
+      "pdfFiled": 1,
       "pdfStatus": "Pending filing or verification"
     },
     {
