@@ -46,3 +46,17 @@ test('disabled delivery makes no calls; sent and uncertain assignments do not re
  ledger.set('consultant/item-a',{v:{team:'MEP Engineers',state:'uncertain'}});
  assert.equal((await processConsultantAssignments(args)).manualVerification,1);assert.equal(calls,2);
 });
+
+test('review notice includes project prefix, flagged due date and extension request for both projects',()=>{
+ for(const project of ['Santa Monica','Chicago']){
+  const raw=buildReviewEmail({item:{...item,project},team:'MEP Engineers',route,pdfs:[{name:'review.pdf',bytes:Buffer.from('%PDF-1.7\ncontent')}],eventKey:'notice',sender:'jwilliams@raptstudio.com'});
+  const mime=Buffer.from(raw,'base64url').toString();
+  const subject=Buffer.from(mime.match(/Subject: =\?UTF-8\?B\?(.+?)\?=/)[1],'base64').toString();
+  assert.equal(subject,'INTUIT CA | '+project+' | RFI 64 | Support review');
+  const part=mime.split('--project-desk-notice')[1].split('\r\n\r\n')[1];
+  const body=Buffer.from(part.replace(/\s/g,''),'base64').toString();
+  assert.ok(body.includes('A submission has been shared for your review.'));
+  assert.ok(body.includes('REVIEW DUE: 2026-11-02'));
+  assert.ok(body.includes('If you need more time for your review, please let us know as soon as possible'));
+ }
+});
