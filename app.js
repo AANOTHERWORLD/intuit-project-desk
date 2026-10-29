@@ -4,6 +4,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statuses=['Needs verification','To assign','In review','Waiting on consultant','Ready to return','Returned to GC','Closed'];
 const projects=['Chicago','Santa Monica'];
+const {teamFor,workflowLabel,assignmentFields}=ProjectDeskCoordination;
 let items=[],filter='All active',section='Overview',visible=[],currentItem=null,loading=false,loaded=false;
 function today(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
 const active=x=>!['Closed','Returned to GC'].includes(x.status);
@@ -39,7 +40,7 @@ function render(){
  const q=$('search').value.toLowerCase().trim();
  visible=scoped.filter(x=>($('type').value==='All types'||x.type===$('type').value)&&($('owner').value==='All owners'||($('owner').value==='Unassigned'?!x.owner:x.owner===$('owner').value))&&(!q||[x.subject,x.number,x.owner,x.discipline,x.consultant,x.nextAction].join(' ').toLowerCase().includes(q))&&(filter==='All items'||filter==='New incoming'&&!x.triagedAt&&active(x)||filter==='All active'&&active(x)||filter==='Overdue'&&late(x)||filter==='Due in 7 days'&&dueSoon(x)||filter==='Unassigned'&&active(x)&&!x.owner||filter==='Needs verification'&&x.status===filter||filter==='Closed'&&!active(x))).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999'));
  $('tabs').innerHTML=['New incoming','All active','Overdue','Due in 7 days','Unassigned','Needs verification','Closed','All items'].map(t=>'<button class="tab '+(filter===t?'chosen-tab':'')+'" data-filter="'+t+'">'+t+'</button>').join('');
- function row(x){return '<tr><td></td><td><button class="item-title" data-id="'+esc(x.id)+'"><span class="item-meta">'+esc(x.type.toUpperCase())+' · '+esc(x.number)+'</span><strong>'+esc(x.subject)+'</strong><span class="item-desc">'+esc(x.nextAction||x.discipline)+'</span><span class="item-review">Received '+esc(calendarDay(x.received)===null?'Not set':fmt(x.received))+' · '+esc(reviewWindow(x))+'</span></button></td><td><span class="project-cell"><span class="dot '+(x.project==='Chicago'?'orange':'purple')+'"></span>'+esc(x.project)+'</span></td><td><button data-id="'+esc(x.id)+'" class="owner '+(x.owner?'':'unassigned')+'">'+esc(x.owner||'Unassigned')+'</button><span class="discipline">'+esc(x.discipline)+'</span></td><td><span class="tag '+(x.status==='Needs verification'?'amber':x.status==='Closed'?'green':'')+'">'+esc(x.status)+'</span></td><td><span class="due '+(late(x)?'red':'')+'">'+fmt(x.due)+'</span>'+(late(x)?'<span class="due-note">Past date · verify</span>':'')+'</td><td><button data-id="'+esc(x.id)+'" class="icon-btn" aria-label="Open '+esc(x.type+' '+x.number)+'">↗</button></td></tr>'}
+ function row(x){return '<tr><td></td><td><button class="item-title" data-id="'+esc(x.id)+'"><span class="item-meta">'+esc(x.type.toUpperCase())+' · '+esc(x.number)+'</span><strong>'+esc(x.subject)+'</strong><span class="item-desc">'+esc(x.nextAction||x.discipline)+'</span><span class="item-review">Received '+esc(calendarDay(x.received)===null?'Not set':fmt(x.received))+' · '+esc(reviewWindow(x))+'</span></button></td><td><span class="project-cell"><span class="dot '+(x.project==='Chicago'?'orange':'purple')+'"></span>'+esc(x.project)+'</span></td><td><button data-id="'+esc(x.id)+'" class="owner '+(x.owner?'':'unassigned')+'">'+esc(x.owner||'Unassigned')+'</button><span class="discipline">'+esc(x.discipline)+'</span></td><td><span class="tag '+(x.status==='Needs verification'?'amber':x.status==='Closed'?'green':'')+'">'+esc(workflowLabel(x))+'</span></td><td><span class="due '+(late(x)?'red':'')+'">'+fmt(x.due)+'</span>'+(late(x)?'<span class="due-note">Past date · verify</span>':'')+'</td><td><button data-id="'+esc(x.id)+'" class="icon-btn" aria-label="Open '+esc(x.type+' '+x.number)+'">↗</button></td></tr>'}
  const head=document.querySelector('#mixedTable thead').innerHTML;
  for(const [kind,register,rows,count,thead]of [['RFI','rfiRegister','rfiRows','rfiCount','rfiHead'],['Submittal','submittalRegister','subRows','subCount','subHead']]){
    const subset=visible.filter(x=>x.type===kind);$(thead).innerHTML=head;$(count).textContent=subset.length;
@@ -100,12 +101,22 @@ function renderIssueContext(x){
  }
 }
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderIssueContext(x);renderDocuments(x);$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').innerHTML='<option>'+esc(workflowLabel(x))+'</option>';$('status').selectedIndex=0;$('consultant').value=teamFor(x.consultant);$('consultant').disabled=!active(x);$('copyAssignment').disabled=!active(x);previewAssignment();$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderIssueContext(x);renderDocuments(x);$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
+function previewAssignment(){
+ const item=items.find(x=>x.id===currentItem);if(!item)return;
+ const team=$('consultant').value;
+ $('assignmentPreview').textContent='Saved: '+workflowLabel(item)+'. '+(team===teamFor(item.consultant)?'':'Preview: '+(team?'Assigned to '+team:'Architect review')+'. ' )+'Record ID: '+item.id;
+}
+$('consultant').onchange=previewAssignment;
+$('copyAssignment').onclick=async()=>{
+ const item=items.find(x=>x.id===currentItem);if(!item||!active(item))return;
+ try{await navigator.clipboard.writeText(JSON.stringify(assignmentFields($('consultant').value),null,2));$('saveState').textContent='Copied. In GitHub, locate record '+item.id+' ('+item.project+' '+item.type+' '+item.number+'), replace its consultant and status fields, then commit. The assignment is not saved until you commit.'}catch{$('saveState').textContent='Clipboard unavailable. Set consultant to '+JSON.stringify($('consultant').value)+' and status to '+JSON.stringify(assignmentFields($('consultant').value).status)+' in record '+item.id+'.'}
+};
 document.querySelectorAll('#form input,#form textarea').forEach(el=>el.readOnly=true);
-document.querySelectorAll('#form select,#form input[type=checkbox]').forEach(el=>el.disabled=true);
+document.querySelectorAll('#form select:not(#consultant),#form input[type=checkbox]').forEach(el=>el.disabled=true);
 document.addEventListener('keydown',e=>{if($('overlay').hidden)return;if(e.key==='Escape')closeItem();if(e.key==='Tab'){const focusables=[...$('overlay').querySelectorAll('button,a[href],input:not([disabled]),textarea')];const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
 function toggleSources(){$('sourceInfo').hidden=!$('sourceInfo').hidden}
 $('sources').onclick=toggleSources;
@@ -114,7 +125,7 @@ for(const id of ['project','owner'])$(id).onchange=render;
 $('type').onchange=()=>{section='Overview';render()};
 $('search').oninput=render;
 $('reset').onclick=()=>{$('project').value='All projects';$('type').value=section==='RFIs'?'RFI':section==='Submittals'?'Submittal':'All types';$('owner').value='All owners';$('search').value='';filter='All active';render()};
-$('export').onclick=()=>{const cols=['project','type','number','subject','discipline','due','status','owner','consultant','nextAction'];const safeCSV=s=>{const raw=String(s??'');return /^[\s]*[=+@\-\t\r]/.test(raw)?"'"+raw:raw};const csv=[cols,...visible.map(x=>cols.map(c=>x[c]||''))].map(r=>r.map(s=>'"'+safeCSV(s).replace(/"/g,'""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='intuit-project-desk.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$('export').onclick=()=>{const cols=['project','type','number','subject','discipline','due','status','owner','consultant','nextAction'];const safeCSV=s=>{const raw=String(s??'');return /^[\s]*[=+@\-\t\r]/.test(raw)?"'"+raw:raw};const csv=[cols,...visible.map(x=>cols.map(c=>c==='status'?workflowLabel(x):x[c]||''))].map(r=>r.map(s=>'"'+safeCSV(s).replace(/"/g,'""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='intuit-project-desk.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 async function refresh(){
  if(loading)return;loading=true;$('refresh').disabled=true;
  try{
@@ -140,4 +151,5 @@ async function refresh(){
  finally{loading=false;$('refresh').disabled=false}
 }
 $('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();loadDocuments();
+
 
