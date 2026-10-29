@@ -37,7 +37,7 @@ function render(){
  document.querySelectorAll('[data-view]').forEach(b=>{b.classList.remove('active');b.classList.toggle('active-nav',b.dataset.view===section)});
 }
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source captured '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
@@ -63,8 +63,14 @@ async function refresh(){
   for(const item of data.items){if(!item||typeof item.id!=='string'||ids.has(item.id)||!projects.includes(item.project)||!['RFI','Submittal'].includes(item.type)||!statuses.includes(item.status)||typeof item.subject!=='string')throw new Error('A published record is invalid.');ids.add(item.id)}
   items=data.items;loaded=true;
   const prev=$('owner').value;$('owner').innerHTML='<option>All owners</option><option>Unassigned</option>'+[...new Set(items.map(x=>x.owner).filter(Boolean))].sort().map(o=>'<option>'+esc(o)+'</option>').join('');if([...$('owner').options].some(o=>o.value===prev))$('owner').value=prev;
-  $('dataStatus').textContent=data.syncConnected?'Published register · automated source updates':'Published snapshot · Smartsheet sync not connected';
-  $('dataDetail').textContent=items.length+' records · source captured '+fmt(data.sourceUpdatedAt)+' · checked '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+'. Verify current source status before acting.';
+  const lastPull=data.lastSuccessfulSyncAt||data.sourceUpdatedAt, lastTime=lastPull?new Date(lastPull):null, stale=data.syncConnected&&(!lastTime||Date.now()-lastTime.getTime()>Math.max(120,2*(data.refreshIntervalMinutes||60))*60000);
+  const stamp=lastTime&&!Number.isNaN(lastTime.getTime())?lastTime.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'not yet available';
+  $('dataStatus').textContent=stale?'Source refresh overdue · showing last successful pull':data.syncConnected?'Live source feed · hourly sync':data.lastSuccessfulSyncAt?'Source pull verified · scheduled activation pending':'Published snapshot · Smartsheet sync not connected';
+  $('dataDetail').textContent=items.length+' records · last source pull '+stamp+'. Page checks for published updates every minute.';
+  $('syncDetails').textContent=$('dataStatus').textContent+'. Last successful source pull: '+stamp+'.';
+  const total=items.reduce((n,x)=>n+(Number(x.pdfTotal)||0),0),filed=items.reduce((n,x)=>n+(Number(x.pdfFiled)||0),0),errors=Number(data.filing?.failedThisRun)||0;
+  $('filingDetails').textContent=(data.filing?.connected?'PDF filing connected. ':'PDF filing has not been activated. ')+filed+' of '+total+' current PDF attachments verified in Box.'+(errors?' '+errors+' transfer checks failed in the latest run.':'')+(data.filing?.backfillPending?' Initial filing or verification remains in progress.':'');
+  $('incomingNote').textContent=items.some(x=>x.importedBaseline)?'Imported source records are included until triaged. New arrivals and revisions return to this queue; closed items are excluded.':'Source records awaiting triage. Closed items are excluded.';
   $('loadError').hidden=true;render();
   if(currentItem&&!$('overlay').hidden){const updated=items.find(x=>x.id===currentItem);if(updated)openItem(updated);else closeItem()}
  }catch(err){$('loadError').hidden=false;$('loadError').textContent=(loaded?'Refresh failed. Showing the last loaded data. ':'Data unavailable. Counts are not yet known. ')+err.message;$('dataStatus').textContent=loaded?'Data may be stale · refresh failed':'Shared register unavailable'}
