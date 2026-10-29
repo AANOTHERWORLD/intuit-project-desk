@@ -18,8 +18,8 @@ function buildReviewEmail({item,team,route,pdfs,eventKey,sender}){
  if(typeof item.question!=='string'||!item.question.trim())throw new Error('Question text is missing; email is held');
  const enc=v=>Buffer.from(v).toString('base64').match(/.{1,76}/g)?.join('\r\n')||'';
  const boundary='project-desk-'+eventKey;
- const subject='Intuit '+item.project+' | '+item.type+' '+item.number+' | '+item.subject;
- const body=['Hello '+team+' team,','','Please review the attached '+item.type.toLowerCase()+'.','Project: '+item.project,'Reference: '+item.type+' '+item.number,'Subject: '+item.subject,'Response required by: '+(item.due||'Please confirm with Rapt'),'','Question / request:',item.question,'','Please reply to this email with your review. Rapt will coordinate the formal response in Smartsheet.','','Rapt Studio | Intuit Project Desk'].join('\n');
+ const subject='INTUIT CA | '+item.project+' | '+item.type+' '+item.number+' | '+item.subject;
+ const body=['Hello '+team+' team,','','A submission has been shared for your review. Please review the attached '+item.type.toLowerCase()+'.','','REVIEW DUE: '+(item.due||'Please confirm with Rapt'),'If you need more time for your review, please let us know as soon as possible so we can coordinate the response schedule.','','Project: '+item.project,'Reference: '+item.type+' '+item.number,'Subject: '+item.subject,'','Question / request:',item.question,'','Please reply to this email with your review. Rapt will coordinate the formal response in Smartsheet.','','Rapt Studio | Intuit Project Desk'].join('\n');
  const question=Buffer.from(['Project: '+item.project,'Reference: '+item.type+' '+item.number,'Subject: '+item.subject,'Response required by: '+(item.due||'Not set'),'','Question / request:',item.question].join('\n'));
  const files=[{name:'Question-and-review-request.txt',bytes:question,type:'text/plain'},...pdfs.map(f=>({...f,type:'application/pdf'}))];
  if(files.reduce((n,f)=>n+f.bytes.length,0)>18*1024*1024)throw new Error('Attachments exceed 18 MiB; split or reduce the PDFs before sending');
