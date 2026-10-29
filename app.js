@@ -17,11 +17,19 @@ function calendarDay(value){
 }
 function reviewDays(x){
  const received=calendarDay(x.received),due=calendarDay(x.due);
- return received===null||due===null?null:due-received;
+ if(received===null||due===null)return null;
+ if(due<received)return -1;
+ const span=due-received;
+ let days=Math.floor(span/7)*5;
+ for(let offset=1;offset<=span%7;offset++){
+  const weekday=new Date((received+offset)*86400000).getUTCDay();
+  if(weekday!==0&&weekday!==6)days++;
+ }
+ return days;
 }
 function reviewWindow(x){
  const days=reviewDays(x);
- return days===null?'Not set':days<0?'Due date precedes receipt':days+' calendar '+(days===1?'day':'days')+' to review';
+ return days===null?'Not set':days<0?'Due date precedes receipt':days+' working '+(days===1?'day':'days')+' to review';
 }
 function render(){
  const scoped=items.filter(x=>$('project').value==='All projects'||x.project===$('project').value);
