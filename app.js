@@ -36,8 +36,33 @@ function render(){
  document.querySelectorAll('[data-intake-kind]').forEach(b=>b.onclick=()=>{section=b.dataset.intakeKind==='RFI'?'RFIs':'Submittals';$('type').value=b.dataset.intakeKind;filter='New incoming';render();document.querySelector('.tracker').scrollIntoView({behavior:'smooth',block:'start'})});
  document.querySelectorAll('[data-view]').forEach(b=>{b.classList.remove('active');b.classList.toggle('active-nav',b.dataset.view===section)});
 }
+let documents={items:{}};
+async function loadDocuments(){
+ try{
+  const response=await fetch('./data/documents.json',{cache:'no-store'});
+  if(!response.ok)return;
+  const data=await response.json();
+  if(data.schemaVersion!==1||!data.items||typeof data.items!=='object')return;
+  documents=data;
+  if(currentItem&&!$('overlay').hidden)renderDocuments(items.find(x=>x.id===currentItem));
+ }catch{ /* The register remains usable when document links are unavailable. */ }
+}
+function renderDocuments(x){
+ if(!x)return;
+ const target=$('documentLinks');if(!target)return;
+ const entry=documents.items[x.id];
+ const files=Array.isArray(entry?.files)?entry.files.filter(f=>/^\d+$/.test(String(f.id))&&typeof f.name==='string'):[];
+ target.replaceChildren();
+ const note=document.createElement('p');note.className='source-date';
+ note.textContent=files.length?'Preview PDFs in Box. Your existing Box access applies.':x.pdfTotal?'PDF links are awaiting indexing.':'No PDF is currently listed for this item.';
+ target.append(note);
+ for(const file of files){
+  const link=document.createElement('a');link.href='https://app.box.com/file/'+file.id;link.target='_blank';link.rel='noopener noreferrer';link.className='secondary';link.style.cssText='display:block;margin:8px 0;white-space:normal;text-align:left';
+  link.textContent=file.name+' ↗';link.setAttribute('aria-label','Preview PDF in Box: '+file.name);target.append(link);
+ }
+}
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderDocuments(x);$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
@@ -76,4 +101,5 @@ async function refresh(){
  }catch(err){$('loadError').hidden=false;$('loadError').textContent=(loaded?'Refresh failed. Showing the last loaded data. ':'Data unavailable. Counts are not yet known. ')+err.message;$('dataStatus').textContent=loaded?'Data may be stale · refresh failed':'Shared register unavailable'}
  finally{loading=false;$('refresh').disabled=false}
 }
-$('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();
+$('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();loadDocuments();
+
