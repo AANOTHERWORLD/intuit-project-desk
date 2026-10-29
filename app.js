@@ -82,8 +82,26 @@ function renderDocuments(x){
   link.textContent=file.name+' ↗';link.setAttribute('aria-label','Preview PDF in Box: '+file.name);target.append(link);
  }
 }
+function renderIssueContext(x){
+ const target=$('issueContext');if(!target)return;
+ target.replaceChildren();
+ const fields=Array.isArray(x.contextFields)?x.contextFields.filter(f=>f&&typeof f.label==='string'&&typeof f.value==='string'&&f.value.trim()):[];
+ const question=typeof x.question==='string'?x.question:typeof x.questions==='string'?x.questions:typeof x.questionText==='string'?x.questionText:'';
+ const entries=fields.length?fields:question.trim()?[{label:'Question',value:question}]:[];
+ if(!entries.length){
+  const note=document.createElement('p');note.className='source-date';
+  note.textContent=Object.hasOwn(x,'question')||Object.hasOwn(x,'contextFields')?'No additional question or context text was provided in Smartsheet.':'Question text has not yet been included in the source sync.';
+  target.append(note);return;
+ }
+ for(const field of entries){
+  const section=document.createElement('section');section.className='issue-context-field';
+  const title=document.createElement('h4');title.textContent=field.label;
+  const body=document.createElement('div');body.className='issue-context-text';body.textContent=field.value;
+  section.append(title,body);target.append(section);
+ }
+}
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderDocuments(x);$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderIssueContext(x);renderDocuments(x);$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
