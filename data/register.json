@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": false,
-  "sourceUpdatedAt": "2026-10-29T01:16:21.695Z",
-  "lastSuccessfulSyncAt": "2026-10-29T01:16:21.695Z",
+  "sourceUpdatedAt": "2026-10-29T01:30:18.610Z",
+  "lastSuccessfulSyncAt": "2026-10-29T01:30:18.610Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
     "backfillPending": true,
-    "failedThisRun": 10
+    "failedThisRun": 0
   },
   "items": [
     {
-      "id": "ss-5052138748071812-2789472753680260",
+      "id": "item-f37b0f8f2a09b1bc3bb739d6",
       "project": "Chicago",
       "type": "RFI",
       "number": "1",
@@ -34,7 +34,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5008925857939332",
+      "id": "item-2048626c189821dd7ff964c6",
       "project": "Chicago",
       "type": "RFI",
       "number": "2",
@@ -56,7 +56,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4016440520212356",
+      "id": "item-290cbc6f152330817d27fd47",
       "project": "Chicago",
       "type": "RFI",
       "number": "3",
@@ -78,7 +78,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-2841018029834116",
+      "id": "item-853e9c046053cd238878f4eb",
       "project": "Chicago",
       "type": "RFI",
       "number": "4",
@@ -100,7 +100,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-7954001575804804",
+      "id": "item-f9ec8d3b111c9122e3c2ca44",
       "project": "Chicago",
       "type": "RFI",
       "number": "5",
@@ -122,7 +122,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-5878184825847684",
+      "id": "item-91fc83ddd7b7e82f3539816b",
       "project": "Chicago",
       "type": "RFI",
       "number": "6",
@@ -144,7 +144,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-8867695738486660",
+      "id": "item-9124507e4a309443fa369bd5",
       "project": "Chicago",
       "type": "RFI",
       "number": "7",
@@ -166,7 +166,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-8976397686538116",
+      "id": "item-eaa6735392cf2aad25c6f141",
       "project": "Chicago",
       "type": "RFI",
       "number": "8",
@@ -188,7 +188,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1026273661419396",
+      "id": "item-b82884fe998c76cba4dfb7c1",
       "project": "Chicago",
       "type": "RFI",
       "number": "9",
@@ -210,7 +210,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-463381190934404",
+      "id": "item-ca863ec1ce8034c7fb2b228b",
       "project": "Chicago",
       "type": "RFI",
       "number": "10",
@@ -232,7 +232,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-674487423467396",
+      "id": "item-6b8f9eab4ed48fd706765f32",
       "project": "Chicago",
       "type": "RFI",
       "number": "11",
@@ -250,11 +250,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-5052138748071812-7175052764643204",
+      "id": "item-506b87dfc5594a4168434598",
       "project": "Chicago",
       "type": "RFI",
       "number": "12",
@@ -276,7 +276,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6513041007443844",
+      "id": "item-f5f317072a785052d3ef7a8b",
       "project": "Chicago",
       "type": "RFI",
       "number": "13",
@@ -298,7 +298,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2768939975704452",
+      "id": "item-1b002fe01a9876254d39a21b",
       "project": "Chicago",
       "type": "RFI",
       "number": "14",
@@ -320,7 +320,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8604493787168644",
+      "id": "item-f8c1fae0124976010297dfc0",
       "project": "Chicago",
       "type": "RFI",
       "number": "15",
@@ -342,7 +342,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1296793306922884",
+      "id": "item-831cbeb60bc5b1863402ed22",
       "project": "Chicago",
       "type": "RFI",
       "number": "16",
@@ -364,7 +364,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-3002913305657220",
+      "id": "item-6a273a18ec043e6ad808b196",
       "project": "Chicago",
       "type": "RFI",
       "number": "16",
@@ -386,7 +386,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3332527880142724",
+      "id": "item-74922619f0fdb4cf6547b8aa",
       "project": "Chicago",
       "type": "RFI",
       "number": "17",
@@ -408,7 +408,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6905330407571332",
+      "id": "item-f4ce53c4d4d1cc93feff78ab",
       "project": "Chicago",
       "type": "RFI",
       "number": "18",
@@ -430,7 +430,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7565680617455492",
+      "id": "item-b04f7951e2b2cb065c2e6252",
       "project": "Chicago",
       "type": "RFI",
       "number": "19",
@@ -452,7 +452,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-5860300501811076",
+      "id": "item-0da5eea7a1143f1ccf6805ad",
       "project": "Chicago",
       "type": "RFI",
       "number": "20",
@@ -474,7 +474,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1760390970081156",
+      "id": "item-097000035f6e34b22b536e0a",
       "project": "Chicago",
       "type": "RFI",
       "number": "21",
@@ -496,7 +496,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7138467950624644",
+      "id": "item-2fa9749ad8fc0095c101f0ae",
       "project": "Chicago",
       "type": "RFI",
       "number": "22",
@@ -518,7 +518,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2895740341845892",
+      "id": "item-c58eb2848b91d55b5fc74cce",
       "project": "Chicago",
       "type": "RFI",
       "number": "23",
@@ -540,7 +540,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4991542111502212",
+      "id": "item-0ed4dec37b9570b2943c0dcd",
       "project": "Chicago",
       "type": "RFI",
       "number": "24",
@@ -562,7 +562,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4992807516241796",
+      "id": "item-418ceac8d774bd9204710a8e",
       "project": "Chicago",
       "type": "RFI",
       "number": "25",
@@ -584,7 +584,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2366449510252420",
+      "id": "item-45a06a0667fa394613f08189",
       "project": "Chicago",
       "type": "RFI",
       "number": "26",
@@ -606,7 +606,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8141861431541636",
+      "id": "item-5b9f986526842c120866d5aa",
       "project": "Chicago",
       "type": "RFI",
       "number": "27",
@@ -628,7 +628,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1628927985450884",
+      "id": "item-348dafd1da03705dedeaff7a",
       "project": "Chicago",
       "type": "RFI",
       "number": "28",
@@ -650,7 +650,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4077501725802372",
+      "id": "item-9edd72182a5c85976031c6da",
       "project": "Chicago",
       "type": "RFI",
       "number": "29",
@@ -672,7 +672,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1635151634497412",
+      "id": "item-184a1498a1984ee39ef0ae7e",
       "project": "Chicago",
       "type": "RFI",
       "number": "30",
@@ -694,7 +694,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-2468986770902916-1381962105749380",
+      "id": "item-7cdffe54681b570e7b151511",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 20",
@@ -716,7 +716,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-7623884882837380",
+      "id": "item-eeb8c4de7aa43629a1a8491a",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 21",
@@ -738,7 +738,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-650067027427204",
+      "id": "item-017f393f4f711cfe4dc2fcd7",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 22",
@@ -760,7 +760,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-8918968920178564",
+      "id": "item-e69202c8b4fd4fc730673670",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 23",
@@ -782,7 +782,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-1073440207404932",
+      "id": "item-3d315521f8b77cd6b2222a4e",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 24",
@@ -804,7 +804,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-8615527865909124",
+      "id": "item-c21c3e594a391ddc1ec26027",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 25",
@@ -826,7 +826,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-3009428335886212",
+      "id": "item-09ebda79e387ad232a6dd2ef",
       "project": "Chicago",
       "type": "Submittal",
       "number": "Row 26",
@@ -848,7 +848,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-6488067445489540",
+      "id": "item-63f63ccdf400070f923401de",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-001",
@@ -870,7 +870,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4236267631804292",
+      "id": "item-a14bd2f990ddb4f502dca74c",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-002",
@@ -892,7 +892,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8739867259174788",
+      "id": "item-72e050c201161612afaf0e1d",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-003",
@@ -914,7 +914,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-154880469499780",
+      "id": "item-8c428f450f3875746d564ae8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-004",
@@ -936,7 +936,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4658480096870276",
+      "id": "item-1b6c23c02298660ee3ae4ea5",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-005",
@@ -958,7 +958,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2406680283185028",
+      "id": "item-3552a0bfb7b48d1018b66e0b",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-006",
@@ -980,7 +980,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6910279910555524",
+      "id": "item-f5e3e9937b7bacedabc879f8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-007",
@@ -1002,7 +1002,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1280780376342404",
+      "id": "item-4a3729c5e3d945c7966e5827",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-008",
@@ -1024,7 +1024,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5784380003712900",
+      "id": "item-7c126494a64c05b26549fb60",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-009",
@@ -1046,7 +1046,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3532580190027652",
+      "id": "item-d4b34ae8e941610b6f4600a9",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-010",
@@ -1068,7 +1068,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8036179817398148",
+      "id": "item-6c6c1fe3119d1187c79018c2",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-011",
@@ -1090,7 +1090,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-717830422921092",
+      "id": "item-f97cb5693a47e199f4e6ecd2",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-012",
@@ -1112,7 +1112,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5221430050291588",
+      "id": "item-bc5a61815bf215e85bbdb5bc",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-013",
@@ -1134,7 +1134,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2969630236606340",
+      "id": "item-6dee0fddb1414f63f1216399",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-014",
@@ -1156,7 +1156,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7473229863976836",
+      "id": "item-2cd1014415f8171733064c2e",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-015",
@@ -1178,7 +1178,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1843730329763716",
+      "id": "item-d6f40d614a6fb0e931bc068c",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-016",
@@ -1200,7 +1200,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6347329957134212",
+      "id": "item-5391141af718126e7034597b",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-017",
@@ -1222,7 +1222,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4095530143448964",
+      "id": "item-b36ae590793bc475b470d8a6",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-018",
@@ -1244,7 +1244,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8599129770819460",
+      "id": "item-0e38c647f011c892f9b6efa8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-019",
@@ -1266,7 +1266,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1273159168688004",
+      "id": "item-251803c0e60d4593566359c8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-020",
@@ -1288,7 +1288,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7171682977578884",
+      "id": "item-ed10a8dcf588587a055c4ac0",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-021",
@@ -1310,7 +1310,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6768765889019780",
+      "id": "item-601634f15b9eaa020339747c",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-022",
@@ -1332,7 +1332,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6487057180524420",
+      "id": "item-46ee5a99bb3db67d8cba9efe",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-023",
@@ -1354,7 +1354,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4235257366839172",
+      "id": "item-27e42ae32faefb41f1746215",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-024",
@@ -1376,7 +1376,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5597968288317316",
+      "id": "item-17e7cc96fc1ecf4879dfebd0",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-025",
@@ -1398,7 +1398,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5789639169802116",
+      "id": "item-b2130f1b2474a488e33b6f54",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-026",
@@ -1420,7 +1420,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-6068021803614084",
+      "id": "item-5f32724e98e8e2c5b66cc008",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-027",
@@ -1442,7 +1442,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3585622872162180",
+      "id": "item-9e4e7b2b406f8bf2ce63668d",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-028",
@@ -1464,7 +1464,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1780482208956292",
+      "id": "item-1097a04207fb1d0e08d92993",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-029",
@@ -1486,7 +1486,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-8993119506268036",
+      "id": "item-c223243171eedbc972e898e9",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-030",
@@ -1508,7 +1508,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-4540013993262980",
+      "id": "item-51d2d0769c89afe3f9b3ceba",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-031",
@@ -1530,7 +1530,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-369022188650372",
+      "id": "item-bb73493776363b3c0070d29d",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-032",
@@ -1552,7 +1552,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4872621816020868",
+      "id": "item-6c5e5ceef00da81f4d4505b5",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-033",
@@ -1574,7 +1574,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2362338178498436",
+      "id": "item-85c85a1927aacdb9587970cd",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-034",
@@ -1596,7 +1596,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8357565675601796",
+      "id": "item-3fb4f0251ee5a6972d93d430",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-035",
@@ -1618,7 +1618,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7642497138818948",
+      "id": "item-b12d447a85c0650d8c0cecf8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-40",
@@ -1640,7 +1640,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-323189429763972",
+      "id": "item-ee73dd396040f3f507691df8",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-41",
@@ -1662,7 +1662,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4826789057134468",
+      "id": "item-26e049427b715a926ae16a5a",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-42",
@@ -1684,7 +1684,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2574989243449220",
+      "id": "item-63988192c73596b728088977",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-43",
@@ -1706,7 +1706,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7078588870819716",
+      "id": "item-cb3de242b9c946c575e92d5f",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-44",
@@ -1728,7 +1728,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-1449089336606596",
+      "id": "item-4017de9321e9355e56faf2c6",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-45",
@@ -1750,7 +1750,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5952688963977092",
+      "id": "item-ee38998d78af4d8217424b68",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-46",
@@ -1772,7 +1772,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3700889150291844",
+      "id": "item-3638f75ce0ce99840af2e349",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-47",
@@ -1794,7 +1794,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8204488777662340",
+      "id": "item-e2bae88dc415ca5ee11edf65",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-48",
@@ -1816,7 +1816,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-886139383185284",
+      "id": "item-049bef484f042fdaf3a88282",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-49",
@@ -1838,7 +1838,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-5389739010555780",
+      "id": "item-61e02be9b6acf430530c08c6",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-50",
@@ -1860,7 +1860,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4918807120838532",
+      "id": "item-fcd35442a3e468b189c4e99b",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-51",
@@ -1882,7 +1882,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2667007307153284",
+      "id": "item-b5753b8a53d0c38077bbc4a0",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-52",
@@ -1904,7 +1904,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7170606934523780",
+      "id": "item-f95df07e961eb9658e8245f6",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-53",
@@ -1926,7 +1926,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-8927389948575620",
+      "id": "item-e109c0daed9d8196146a0f72",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-54",
@@ -1948,7 +1948,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-2902532810604420",
+      "id": "item-0b737c355b5d94ced75996b2",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-55",
@@ -1970,7 +1970,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-7385098368319364",
+      "id": "item-aee38179ee5c9a6455341700",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-56",
@@ -1992,7 +1992,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-5742878011686788",
+      "id": "item-0360ff6d9ca8c303619c6417",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-57",
@@ -2014,7 +2014,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4999512015765380",
+      "id": "item-31738565d20a98ee29e47a72",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-58",
@@ -2036,7 +2036,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-8102289508138884",
+      "id": "item-61bc6ceab39407f0a5e9c6fc",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-59",
@@ -2054,11 +2054,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-5052138748071812-4882727262224260",
+      "id": "item-4b2328b93a368c58e597398a",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-60",
@@ -2080,7 +2080,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-442267949072260",
+      "id": "item-71e776561b6405eddc92295c",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-61",
@@ -2102,7 +2102,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-2116109038780292",
+      "id": "item-1ec19a38b0b5619bc00750d2",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-62",
@@ -2124,7 +2124,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-3640074471210884",
+      "id": "item-8c41e995dcdf8081306811b4",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-63",
@@ -2146,7 +2146,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3794636148572036",
+      "id": "item-5b03b1028650f451e8d3703b",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-64",
@@ -2168,7 +2168,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-3489170860277636",
+      "id": "item-f8ea5c983c732797fc32fb74",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-65",
@@ -2190,7 +2190,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-4925376683048836",
+      "id": "item-1761944971a4775317fdf7ac",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-66",
@@ -2212,7 +2212,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-6997540122918788",
+      "id": "item-c04a8b58541d38e1a87cb614",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-67",
@@ -2234,7 +2234,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-4025560193040260",
+      "id": "item-24660c1a42c5977be68fd987",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-68",
@@ -2256,7 +2256,7 @@
       "pdfStatus": "No PDF attached"
     },
     {
-      "id": "ss-5052138748071812-7026307251830660",
+      "id": "item-4591657d4630fc3c292cace6",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-69",
@@ -2278,7 +2278,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-5052138748071812-7252810522689412",
+      "id": "item-58eb894e0aa7abf46ef4e6eb",
       "project": "Santa Monica",
       "type": "RFI",
       "number": "RFI-70",
@@ -2296,11 +2296,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-244728449335172",
+      "id": "item-dbc9e2d61aaf74bb9a7a1d1e",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2322,7 +2322,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-8993776955031428",
+      "id": "item-daa606b06f49778399ee0998",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2344,7 +2344,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-12965979357060",
+      "id": "item-73078df9a960df346f14632b",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2366,7 +2366,7 @@
       "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-4516565606727556",
+      "id": "item-13cded43b1de0a9fa396bcc8",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2388,7 +2388,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-8777006237876100",
+      "id": "item-c83bb239a581a429658e8892",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2410,7 +2410,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-5766085950570372",
+      "id": "item-06467fd9bbde7930f3eaee8b",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2428,11 +2428,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-9652013367172",
+      "id": "item-b11bbfba213ad5918ac349fc",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2450,11 +2450,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-3646004193918852",
+      "id": "item-abe406637dcee978602b88b0",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
@@ -2472,11 +2472,11 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-2372960314195844",
+      "id": "item-50e89ddf18a2b8d985e08d9a",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "R1 Shoring",
@@ -2498,7 +2498,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-6768365420412804",
+      "id": "item-50208a029119caa1fdbcd09e",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "R1 to Structural Steel",
@@ -2520,7 +2520,7 @@
       "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-2264765793042308",
+      "id": "item-c6b3582c5dc5df0b58006a2b",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "R1 to Switchgear Submittal",
@@ -2542,7 +2542,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-4490177327660932",
+      "id": "item-d0e8918093085b67fb5cc806",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "R2 Shoring",
@@ -2564,7 +2564,7 @@
       "pdfStatus": "Pending filing or verification"
     },
     {
-      "id": "ss-2468986770902916-5927319143186308",
+      "id": "item-7e6fa7f0798c274f4c7bdc0b",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "R2 to Structural Steel",
@@ -2586,7 +2586,7 @@
       "pdfStatus": "Verified in Box"
     },
     {
-      "id": "ss-2468986770902916-3483573531836292",
+      "id": "item-ed4a96dc2284589bbcf452bb",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "Row 2",
@@ -2604,7 +2604,7 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 2,
+      "pdfFiled": 1,
       "pdfStatus": "Pending filing or verification"
     }
   ]
