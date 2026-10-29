@@ -74,9 +74,7 @@ async function processConsultantAssignments({items,rows,cfg,zapier,ledger,save,n
    const claimResult=await claim.json();if(!claimResult.commit?.sha)throw new Error('Notification claim not confirmed');
    claimed=true;
    await save(stateKey,{...base,state:'sending'});
-   const sent=await zapier.fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{connection:cfg.gmail,method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({raw})});
-   if(!sent.ok)throw new Error('Email send unconfirmed '+sent.status);
-   const confirmation=await sent.json();if(!confirmation.id)throw new Error('Email send did not return a message id');
+   const confirmation=await uploadReviewMime({raw,zapier,connection:cfg.gmail});
    await save(stateKey,{...base,state:'sent',messageId:confirmation.id});summary.sent++;
   }catch(error){
    await save(stateKey,{...base,state:claimed?'uncertain':'held',reason:String(error.message).slice(0,160)});
@@ -85,6 +83,39 @@ async function processConsultantAssignments({items,rows,cfg,zapier,ledger,save,n
  }
  return summary;
 }
+
+// Keep each authenticated request small while preserving the complete MIME message.
+// On ambiguous failures, the caller retains its notification claim for manual review.
+async function uploadReviewMime({raw,zapier,connection,resource='messages/send',uploadFetch=fetch}){
+ if(!['messages/send','drafts'].includes(resource))throw new Error('Unsupported Gmail upload resource');
+ const mime=Buffer.from(raw,'base64url');
+ const init=await zapier.fetch('https://www.googleapis.com/upload/gmail/v1/users/me/'+resource+'?uploadType=resumable',{connection,method:'POST',headers:{'Content-Type':'application/json','X-Upload-Content-Type':'message/rfc822','X-Upload-Content-Length':String(mime.length)},body:'{}'});
+ if(!init.ok)throw new Error('Email upload initialization failed '+init.status);
+ const session=init.headers.get('location');
+ let url;try{url=new URL(session)}catch{throw new Error('Email upload session missing')}
+ if(url.protocol!=='https:'||!['www.googleapis.com','gmail.googleapis.com'].includes(url.hostname)||!url.pathname.startsWith('/upload/gmail/'))throw new Error('Unexpected Gmail upload destination');
+ const chunkSize=512*1024;
+ let offset=0;
+ while(offset<mime.length){
+  const end=Math.min(offset+chunkSize,mime.length);
+  const part=mime.subarray(offset,end);
+  // This MIME builder encodes every body and subject, so transport bytes are ASCII.
+  const body=part.toString('ascii');if(!Buffer.from(body,'ascii').equals(part))throw new Error('MIME transport must be ASCII');
+  const response=await uploadFetch(session,{method:'PUT',redirect:'manual',headers:{'Content-Type':'message/rfc822','Content-Length':String(part.length),'Content-Range':'bytes '+offset+'-'+(end-1)+'/'+mime.length},body});
+  if(response.status===308){
+   const match=/^(?:bytes=)?0-(\d+)$/.exec(response.headers.get('range')||'');
+   const next=match?Number(match[1])+1:0;
+   if(next<=offset||next>end||next>=mime.length)throw new Error('Email upload acknowledgement invalid');
+   offset=next;continue;
+  }
+  if(!response.ok)throw new Error('Email upload unconfirmed '+response.status);
+  if(end!==mime.length)throw new Error('Premature email upload completion');
+  const result=await response.json();if(!result.id)throw new Error('Email upload did not return an id');
+  return result;
+ }
+ throw new Error('Email upload completion unconfirmed');
+}
+
 
 const zapier=createZapierSdk();
 const sources=[{id:'5052138748071812',type:'RFI',question:'Question:',subject:'RFI Subject',number:'RFI #',discipline:'Questions for:',due:'Response Required by:',closed:'RFI Closed',returned:'Arch. Response Submitted Date'},{id:'2468986770902916',type:'Submittal',question:'Question/Comment/Request:',subject:'Submittal Name',number:"Submittal Reference (ie. R1 to 'Submittal Name')",discipline:'Submittal Review for:',due:'Response Required By Date',closed:'Submittal Approved',returned:'Date of Response'}];
