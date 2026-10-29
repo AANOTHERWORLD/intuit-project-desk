@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "indexedAt": "2026-10-29T13:02:16.868Z",
+  "items": {
+    "item-eeb8c4de7aa43629a1a8491a": {
+      "files": [
+        {
+          "id": "2541641843419",
+          "name": "Intuit #39 Submittal Cover Sheet - Fantech Exhaust Fan - Reviewed NET.pdf"
+        },
+        {
+          "id": "2532074754748",
+          "name": "Intuit #39 Submittal Cover Sheet - Fantech Exhaust Fan.pdf"
+        }
+      ]
+    },
+    "item-e69202c8b4fd4fc730673670": {
+      "files": [
+        {
+          "id": "2541640134425",
+          "name": "Intuit #39 Submittal Cover Sheet - GRDs and Remote Balancing Dampers - Reviewed FAC.pdf"
+        },
+        {
+          "id": "2532066599724",
+          "name": "Intuit #39 Submittal Cover Sheet - GRDs and Remote Balancing Dampers.pdf"
+        }
+      ]
+    },
+    "item-017f393f4f711cfe4dc2fcd7": {
+      "files": [
+        {
+          "id": "2541653471054",
+          "name": "Intuit #39 Submittal Cover Sheet - Greenheck Control Dampers - Reviewed NET.pdf"
+        },
+        {
+          "id": "2532077881317",
+          "name": "Intuit #39 Submittal Cover Sheet - Greenheck Control Dampers.pdf"
+        }
+      ]
+    },
+    "item-3d315521f8b77cd6b2222a4e": {
+      "files": [
+        {
+          "id": "2541642707545",
+          "name": "Intuit #39 Submittal Cover Sheet - Young Regulators - Reviewed NET.pdf"
+        },
+        {
+          "id": "2532065107173",
+          "name": "Intuit #39 Submittal Cover Sheet - Young Regulators.pdf"
+        }
+      ]
+    },
+    "item-c21c3e594a391ddc1ec26027": {
+      "files": [
+        {
+          "id": "2532073595424",
+          "name": "MCM Submittal Cover Sheet-Tribune Tower- Floor Boxes.pdf"
+        },
+        {
+          "id": "2541640256782",
+          "name": "MCM Submittal Cover Sheet-Tribune Tower- Floor Boxes_MENG-NET.pdf"
+        },
+        {
+          "id": "2556536094229",
+          "name": "MCM Submittal Cover Sheet-Tribune Tower- Floor Boxes_MENG-NET_PBD.pdf"
+        }
+      ]
+    },
+    "item-7cdffe54681b570e7b151511": {
+      "files": [
+        {
+          "id": "2532065147973",
+          "name": "MCM Submittal Cover Sheet-Tribune Tower-Plumbing.pdf"
+        }
+      ]
+    },
+    "item-c223243171eedbc972e898e9": {
+      "files": [
+        {
+          "id": "2512036318851",
+          "name": "2026-09-24_RFI-030_Intuit Santa Monica_Floor Opening Locations.pdf"
+        },
+        {
+          "id": "2512033844616",
+          "name": "20260916-3173 1404 3rd street.pdf"
+        },
+        {
+          "id": "2556908485329",
+          "name": "20260916-3173 1404 3rd street.pdf"
+        }
+      ]
+    },
+    "item-51d2d0769c89afe3f9b3ceba": {
+      "files": [
+        {
+          "id": "2512045549284",
+          "name": "2026-09-29_RFI-031_(RFI-002)_Which_Existing_W14_Does_the_New_W14x43_Attach_To - SF Response.pdf"
+        },
+        {
+          "id": "2512031939773",
+          "name": "RFI-002_Which_Existing_W14_Does_the_New_W14x43_Attach_To.pdf"
+        }
+      ]
+    },
+    "item-0b737c355b5d94ced75996b2": {
+      "files": [
+        {
+          "id": "2512038808638",
+          "name": "2026-10-06_Feature Opening Questions_MS Response.pdf"
+        },
+        {
+          "id": "2556809483595",
+          "name": "Feature Opening Questions.pdf"
+        }
+      ]
+    },
+    "item-aee38179ee5c9a6455341700": {
+      "files": [
+        {
+          "id": "2524596748138",
+          "name": "2026-10-13_RFI-056_Architect Confirmations from Main Steel Shop Drawing Review.pdf"
+        },
+        {
+          "id": "2556629224274",
+          "name": "RFI-003 Architect Confirmations from Main Steel Shop Drawing Review.pdf"
+        }
+      ]
+    },
+    "item-4591657d4630fc3c292cace6": {
+      "files": [
+        {
+          "id": "2555711622150",
+          "name": "RFI - Specialty Outlet Designations_RS Comments.pdf"
+        },
+        {
+          "id": "2556279788655",
+          "name": "RFI #1 - Specialty Outlet Designations.pdf"
+        }
+      ]
+    },
+    "item-73078df9a960df346f14632b": {
+      "files": [
+        {
+          "id": "2512077234169",
+          "name": "2026-10-01_MENG PBF60826X6K1-0002-14-QuickPrint_1404_PROMENADE_20260918-0624_2.PDF"
+        },
+        {
+          "id": "2512042472484",
+          "name": "PBF60826X6K1-0002-14-QuickPrint_1404_PROMENADE_20260918-0624_2.PDF"
+        }
+      ]
+    },
+    "item-c6b3582c5dc5df0b58006a2b": {
+      "files": [
+        {
+          "id": "2512033936053",
+          "name": "2026-10-06_Intuit SM Flagship - Switchgear R2_MENG Response NET.PDF"
+        },
+        {
+          "id": "2512027849269",
+          "name": "Intuit SM Flagship - Switchgear R2.PDF"
+        }
+      ]
+    },
+    "item-daa606b06f49778399ee0998": {
+      "files": [
+        {
+          "id": "2540732639672",
+          "name": "2026-10-20_Intuit Santa Monica - GFRG Column Covers & Ceiling Trim Shop Drawings_MS Reviewed.pdf"
+        },
+        {
+          "id": "2512081420541",
+          "name": "Intuit Santa Monica - GFRG Column Covers & Ceiling Trim - Shop Drawings.pdf"
+        },
+        {
+          "id": "2532073461131",
+          "name": "Intuit Santa Monica - GFRG Column Covers & Ceiling Trim - Shop Drawings_PBD REVIEWED.pdf"
+        }
+      ]
+    },
+    "item-c83bb239a581a429658e8892": {
+      "files": [
+        {
+          "id": "2532067221187",
+          "name": "POC3287 - CAD - Vario-Supra Output.pdf"
+        },
+        {
+          "id": "2553512363305",
+          "name": "POC3287 - Vario-Supra_RS-MCN.pdf"
+        }
+      ]
+    },
+    "item-ed4a96dc2284589bbcf452bb": {
+      "files": [
+        {
+          "id": "2512051099112",
+          "name": "2026-09-28_BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_IFA - SF RESPONSE.pdf"
+        },
+        {
+          "id": "2512028879021",
+          "name": "BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_IFA.pdf"
+        }
+      ]
+    },
+    "item-50208a029119caa1fdbcd09e": {
+      "files": [
+        {
+          "id": "2512036063166",
+          "name": "BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_RE-IFA.pdf"
+        }
+      ]
+    },
+    "item-7e6fa7f0798c274f4c7bdc0b": {
+      "files": [
+        {
+          "id": "2532048553954",
+          "name": "BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_RE-IFA-R2.pdf"
+        }
+      ]
+    },
+    "item-dbc9e2d61aaf74bb9a7a1d1e": {
+      "files": [
+        {
+          "id": "2512035297479",
+          "name": "2026-09-15_Intuit SM_Structural Shoring Shop Drawings Intuit SM_RNR.pdf"
+        },
+        {
+          "id": "2512035786275",
+          "name": "Shoring Eng. Drawings Intuit SM.pdf"
+        },
+        {
+          "id": "2556141546077",
+          "name": "Eng. Calcs - Intuit SM.pdf"
+        }
+      ]
+    },
+    "item-50e89ddf18a2b8d985e08d9a": {
+      "files": [
+        {
+          "id": "2512101498590",
+          "name": "2026-09-23_001.1 - Interior Temporary Shoring Drawings Submittal_RNR.pdf"
+        },
+        {
+          "id": "2512037269745",
+          "name": "R1 Shoring Eng. Drawings Intuit SM.pdf"
+        }
+      ]
+    },
+    "item-d0e8918093085b67fb5cc806": {
+      "files": [
+        {
+          "id": "2512046354351",
+          "name": "2026-10-01_Intuit SM Engineered Shoring R2 - SF Response.pdf"
+        },
+        {
+          "id": "2541628420610",
+          "name": "2026-10-21_BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_R2_MS Review.pdf"
+        },
+        {
+          "id": "2541626031779",
+          "name": "BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_RE-IFA - SF Response 261020.pdf"
+        },
+        {
+          "id": "2512032810985",
+          "name": "Intuit SM Engineered Shoring R2.pdf"
+        }
+      ]
+    },
+    "item-6b8f9eab4ed48fd706765f32": {
+      "files": [
+        {
+          "id": "2556135339716",
+          "name": "2026-10-23_A555 INTERIOR SECTIONS.pdf"
+        }
+      ]
+    },
+    "item-b04f7951e2b2cb065c2e6252": {
+      "files": [
+        {
+          "id": "2556278578814",
+          "name": "7.pdf"
+        }
+      ]
+    },
+    "item-290cbc6f152330817d27fd47": {
+      "files": [
+        {
+          "id": "2556737831489",
+          "name": "0039 Tribune Towers Preliminary Security Layout 2026_09_15.pdf"
+        }
+      ]
+    },
+    "item-853e9c046053cd238878f4eb": {
+      "files": [
+        {
+          "id": "2556907023816",
+          "name": "E200.pdf"
+        },
+        {
+          "id": "2556911656782",
+          "name": "E200_Add'l Exit Signage.pdf"
+        }
+      ]
+    },
+    "item-f9ec8d3b111c9122e3c2ca44": {
+      "files": [
+        {
+          "id": "2556736343772",
+          "name": "LV Markup Tribune 09112026.pdf"
+        }
+      ]
+    },
+    "item-9124507e4a309443fa369bd5": {
+      "files": [
+        {
+          "id": "2556637751978",
+          "name": "Intuit -  Tribune Tower - MEP Rev2 Revised Set.pdf"
+        }
+      ]
+    },
+    "item-b82884fe998c76cba4dfb7c1": {
+      "files": [
+        {
+          "id": "2557027154157",
+          "name": "Ramp Sheets.pdf"
+        }
+      ]
+    },
+    "item-09ebda79e387ad232a6dd2ef": {
+      "files": [
+        {
+          "id": "2556368953449",
+          "name": "MCM Submittal Cover Sheet- 39 Tribune- Grille Submittal - Reviewed NET.pdf"
+        },
+        {
+          "id": "2556364852084",
+          "name": "MCM Submittal Cover Sheet- 39 Tribune- Grille Submittal.pdf"
+        }
+      ]
+    },
+    "item-b2130f1b2474a488e33b6f54": {
+      "files": [
+        {
+          "id": "2557027549565",
+          "name": "2026-09-11_Intuit Santa Monica MEP Progress Set.pdf"
+        }
+      ]
+    },
+    "item-1097a04207fb1d0e08d92993": {
+      "files": [
+        {
+          "id": "2556810186312",
+          "name": "RFI Intuit Turbo Tax Santa Monica Electrical equipment Section.pdf"
+        }
+      ]
+    },
+    "item-31738565d20a98ee29e47a72": {
+      "files": [
+        {
+          "id": "2556714474425",
+          "name": "RFI#001 intuit santa monica.pdf"
+        }
+      ]
+    },
+    "item-61bc6ceab39407f0a5e9c6fc": {
+      "files": [
+        {
+          "id": "2556139516691",
+          "name": "RFI#002 ceiling control joints.pdf"
+        }
+      ]
+    },
+    "item-4b2328b93a368c58e597398a": {
+      "files": [
+        {
+          "id": "2556550415474",
+          "name": "RFI#003 - HVAC above ceiling.pdf"
+        }
+      ]
+    },
+    "item-71e776561b6405eddc92295c": {
+      "files": [
+        {
+          "id": "2556360297152",
+          "name": "Intuit Flagship - Plbg RFIs.pdf"
+        }
+      ]
+    },
+    "item-1ec19a38b0b5619bc00750d2": {
+      "files": [
+        {
+          "id": "2556641015284",
+          "name": "2026-10-21_Intuit Santa Monica - Revised E400-401 Sheets.pdf"
+        },
+        {
+          "id": "2556635029813",
+          "name": "Intuit SM - TI Electrical Load Markup (E400-E401).pdf"
+        }
+      ]
+    },
+    "item-c04a8b58541d38e1a87cb614": {
+      "files": [
+        {
+          "id": "2556279575695",
+          "name": "1-12-drywall-system-data-sheet-e-us-HR-2209ctc.pdf"
+        },
+        {
+          "id": "2556287475860",
+          "name": "ecophon-fade-brochure-e-us-2602ctc.pdf"
+        },
+        {
+          "id": "2556291335753",
+          "name": "ecophon-fade-data-sheet-e-us-2608ctc.pdf"
+        },
+        {
+          "id": "2556369435994",
+          "name": "ecophon-fade-install-guide-e-us-2603ctc.pdf"
+        }
+      ]
+    },
+    "item-58eb894e0aa7abf46ef4e6eb": {
+      "files": [
+        {
+          "id": "2556137103964",
+          "name": "RFI - Curved Sliding Door Radius & Width.pdf"
+        }
+      ]
+    },
+    "item-abe406637dcee978602b88b0": {
+      "files": [
+        {
+          "id": "2556138666249",
+          "name": "Intuit Flagship SM - Fire Alarm Plan.pdf"
+        }
+      ]
+    },
+    "item-13cded43b1de0a9fa396bcc8": {
+      "files": [
+        {
+          "id": "2556141438957",
+          "name": "1404 3rd St. Promenade  - fire sprinkler plan.pdf"
+        }
+      ]
+    },
+    "item-06467fd9bbde7930f3eaee8b": {
+      "files": [
+        {
+          "id": "2556127415778",
+          "name": "Shops - Intuit Flasgship Santa Monica - Graves Construction - PC14332 _ Intuit Flasgship Santa Monica - October 28, 2026.pdf"
+        }
+      ]
+    },
+    "item-b11bbfba213ad5918ac349fc": {
+      "files": [
+        {
+          "id": "2556138794029",
+          "name": "Intuit Turbo Tax Santa Monica Panel Submittal 10.27 (1).pdf"
+        }
+      ]
+    }
+  }
+}
