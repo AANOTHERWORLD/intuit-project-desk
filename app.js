@@ -6,7 +6,7 @@ const statuses=['Needs verification','To assign','In review','Waiting on consult
 const projects=['Chicago','Santa Monica'];
 let items=[],filter='All active',section='Overview',visible=[],currentItem=null,loading=false,loaded=false;
 function today(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
-const active=x=>x.status!=='Closed';
+const active=x=>!['Closed','Returned to GC'].includes(x.status);
 const late=x=>active(x)&&x.due&&x.due<today();
 function dueSoon(x){const start=today(),end=new Date(start+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+7);return active(x)&&x.due>=start&&x.due<=end.toISOString().slice(0,10)}
 function fmt(d){return d?new Date(d.slice(0,10)+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'}):'Not set'}
@@ -61,7 +61,7 @@ async function refresh(){
   if(data.schemaVersion!==1||!Array.isArray(data.items)||data.items.length>10000)throw new Error('The register format is invalid.');
   const ids=new Set();
   for(const item of data.items){if(!item||typeof item.id!=='string'||ids.has(item.id)||!projects.includes(item.project)||!['RFI','Submittal'].includes(item.type)||!statuses.includes(item.status)||typeof item.subject!=='string')throw new Error('A published record is invalid.');ids.add(item.id)}
-  items=data.items;loaded=true;
+  items=data.items.map(x=>x.status==='Returned to GC'?{...x,status:'Closed'}:x);loaded=true;
   const prev=$('owner').value;$('owner').innerHTML='<option>All owners</option><option>Unassigned</option>'+[...new Set(items.map(x=>x.owner).filter(Boolean))].sort().map(o=>'<option>'+esc(o)+'</option>').join('');if([...$('owner').options].some(o=>o.value===prev))$('owner').value=prev;
   const lastPull=data.lastSuccessfulSyncAt||data.sourceUpdatedAt, lastTime=lastPull?new Date(lastPull):null, stale=data.syncConnected&&(!lastTime||Date.now()-lastTime.getTime()>Math.max(120,2*(data.refreshIntervalMinutes||60))*60000);
   const stamp=lastTime&&!Number.isNaN(lastTime.getTime())?lastTime.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'not yet available';
