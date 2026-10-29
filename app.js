@@ -10,6 +10,19 @@ const active=x=>!['Closed','Returned to GC'].includes(x.status);
 const late=x=>active(x)&&x.due&&x.due<today();
 function dueSoon(x){const start=today(),end=new Date(start+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+7);return active(x)&&x.due>=start&&x.due<=end.toISOString().slice(0,10)}
 function fmt(d){return d?new Date(d.slice(0,10)+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'}):'Not set'}
+function calendarDay(value){
+ if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return null;
+ const time=Date.parse(value+'T00:00:00Z');
+ return Number.isFinite(time)&&new Date(time).toISOString().slice(0,10)===value?time/86400000:null;
+}
+function reviewDays(x){
+ const received=calendarDay(x.received),due=calendarDay(x.due);
+ return received===null||due===null?null:due-received;
+}
+function reviewWindow(x){
+ const days=reviewDays(x);
+ return days===null?'Not set':days<0?'Due date precedes receipt':days+' calendar '+(days===1?'day':'days')+' to review';
+}
 function render(){
  const scoped=items.filter(x=>$('project').value==='All projects'||x.project===$('project').value);
  const metrics=[['Active in tracker',scoped.filter(active).length,'Based on the latest source pull','All active'],['Past source due date',scoped.filter(late).length,'Verify before escalating','Overdue'],['Due in next 7 days',scoped.filter(dueSoon).length,'Based on published due dates','Due in 7 days'],['Needs an owner',scoped.filter(x=>active(x)&&!x.owner).length,'Assign the next responsible person','Unassigned']];
@@ -18,7 +31,7 @@ function render(){
  const q=$('search').value.toLowerCase().trim();
  visible=scoped.filter(x=>($('type').value==='All types'||x.type===$('type').value)&&($('owner').value==='All owners'||($('owner').value==='Unassigned'?!x.owner:x.owner===$('owner').value))&&(!q||[x.subject,x.number,x.owner,x.discipline,x.consultant,x.nextAction].join(' ').toLowerCase().includes(q))&&(filter==='All items'||filter==='New incoming'&&!x.triagedAt&&active(x)||filter==='All active'&&active(x)||filter==='Overdue'&&late(x)||filter==='Due in 7 days'&&dueSoon(x)||filter==='Unassigned'&&active(x)&&!x.owner||filter==='Needs verification'&&x.status===filter||filter==='Closed'&&!active(x))).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999'));
  $('tabs').innerHTML=['New incoming','All active','Overdue','Due in 7 days','Unassigned','Needs verification','Closed','All items'].map(t=>'<button class="tab '+(filter===t?'chosen-tab':'')+'" data-filter="'+t+'">'+t+'</button>').join('');
- function row(x){return '<tr><td></td><td><button class="item-title" data-id="'+esc(x.id)+'"><span class="item-meta">'+esc(x.type.toUpperCase())+' · '+esc(x.number)+'</span><strong>'+esc(x.subject)+'</strong><span class="item-desc">'+esc(x.nextAction||x.discipline)+'</span></button></td><td><span class="project-cell"><span class="dot '+(x.project==='Chicago'?'orange':'purple')+'"></span>'+esc(x.project)+'</span></td><td><button data-id="'+esc(x.id)+'" class="owner '+(x.owner?'':'unassigned')+'">'+esc(x.owner||'Unassigned')+'</button><span class="discipline">'+esc(x.discipline)+'</span></td><td><span class="tag '+(x.status==='Needs verification'?'amber':x.status==='Closed'?'green':'')+'">'+esc(x.status)+'</span></td><td><span class="due '+(late(x)?'red':'')+'">'+fmt(x.due)+'</span>'+(late(x)?'<span class="due-note">Past date · verify</span>':'')+'</td><td><button data-id="'+esc(x.id)+'" class="icon-btn" aria-label="Open '+esc(x.type+' '+x.number)+'">↗</button></td></tr>'}
+ function row(x){return '<tr><td></td><td><button class="item-title" data-id="'+esc(x.id)+'"><span class="item-meta">'+esc(x.type.toUpperCase())+' · '+esc(x.number)+'</span><strong>'+esc(x.subject)+'</strong><span class="item-desc">'+esc(x.nextAction||x.discipline)+'</span><span class="item-review">Received '+esc(calendarDay(x.received)===null?'Not set':fmt(x.received))+' · '+esc(reviewWindow(x))+'</span></button></td><td><span class="project-cell"><span class="dot '+(x.project==='Chicago'?'orange':'purple')+'"></span>'+esc(x.project)+'</span></td><td><button data-id="'+esc(x.id)+'" class="owner '+(x.owner?'':'unassigned')+'">'+esc(x.owner||'Unassigned')+'</button><span class="discipline">'+esc(x.discipline)+'</span></td><td><span class="tag '+(x.status==='Needs verification'?'amber':x.status==='Closed'?'green':'')+'">'+esc(x.status)+'</span></td><td><span class="due '+(late(x)?'red':'')+'">'+fmt(x.due)+'</span>'+(late(x)?'<span class="due-note">Past date · verify</span>':'')+'</td><td><button data-id="'+esc(x.id)+'" class="icon-btn" aria-label="Open '+esc(x.type+' '+x.number)+'">↗</button></td></tr>'}
  const head=document.querySelector('#mixedTable thead').innerHTML;
  for(const [kind,register,rows,count,thead]of [['RFI','rfiRegister','rfiRows','rfiCount','rfiHead'],['Submittal','submittalRegister','subRows','subCount','subHead']]){
    const subset=visible.filter(x=>x.type===kind);$(thead).innerHTML=head;$(count).textContent=subset.length;
@@ -62,7 +75,7 @@ function renderDocuments(x){
  }
 }
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderDocuments(x);$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','consultant','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').value=x.status;$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderDocuments(x);$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
