@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-10-30T22:00:33.349Z",
-  "lastSuccessfulSyncAt": "2026-10-30T22:00:33.349Z",
+  "sourceUpdatedAt": "2026-10-30T23:00:13.230Z",
+  "lastSuccessfulSyncAt": "2026-10-30T23:00:13.230Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
