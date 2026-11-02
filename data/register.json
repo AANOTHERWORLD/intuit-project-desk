@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-02T15:00:56.154Z",
-  "lastSuccessfulSyncAt": "2026-11-02T15:00:56.154Z",
+  "sourceUpdatedAt": "2026-11-02T16:00:52.415Z",
+  "lastSuccessfulSyncAt": "2026-11-02T16:00:52.415Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -2648,12 +2648,12 @@
       "owner": "",
       "consultant": "",
       "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-10-28T18:54:46Z",
+      "sourceDate": "2026-11-02T15:44:09Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
+      "pdfTotal": 2,
+      "pdfFiled": 2,
       "pdfStatus": "Verified in Box"
     },
     {
@@ -2675,8 +2675,8 @@
       "detectedAt": "2026-10-29T20:00:21.241Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
+      "pdfTotal": 3,
+      "pdfFiled": 3,
       "pdfStatus": "Verified in Box"
     },
     {
