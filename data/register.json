@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-03T21:00:34.655Z",
-  "lastSuccessfulSyncAt": "2026-11-03T21:00:34.655Z",
+  "sourceUpdatedAt": "2026-11-03T22:00:38.567Z",
+  "lastSuccessfulSyncAt": "2026-11-03T22:00:38.567Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -2496,6 +2496,29 @@
       "pdfStatus": "Verified in Box"
     },
     {
+      "id": "item-3cba4fc3ff89b11577d2c160",
+      "project": "Santa Monica",
+      "type": "RFI",
+      "number": "RFI-72",
+      "subject": "Existing 1-1/4\" reinforcing steel cut during plumbing slab saw-cutting",
+      "question": "On November 3, 2026, the concrete subcontractor was saw-cutting the slab for plumbing. During that work they found that existing 1-1/4\" diameter reinforcing steel (about a #10 bar) had been cut.\n\nThe existing drawings don’t show the size, spacing, or purpose of the bar (for example, a slab, grade beam, footing, or post-tensioning-related element). The work area is stopped and secured until the Structural Engineer of Record reviews it.\n\nQuestions:\n\n1. Please identify the structural element the cut reinforcing belongs to, and confirm its function and design intent.\n2. Does the cut bar affect the structural integrity or load capacity of the slab or element? Is any temporary shoring or other interim measure needed right away?\n3. Please provide a repair detail to restore the cut reinforcing. Options might include lap splice with new bar, mechanical couplers, epoxy-doweled supplemental bars, or a thickened slab or concrete patch with added reinforcing. Include lap length, embedment depth, epoxy adhesive product, and concrete mix or strength requirements.\n4. Please confirm whether the plumbing routing can stay as designed. If not, please provide an allowable alternate route or cut location that avoids the primary reinforcing.\n5. Is any non-destructive scanning (GPR) needed before further saw-cutting in this area or anywhere else on the slab?\n6. Please provide a signed and stamped letter or sketch that describes the condition and the approved repair, so Graves can submit it to the City of Santa Monica Building Inspector. Please also confirm whether special inspection is required for the repair (for example, for epoxy anchors or new reinforcing).\n\nGraves suggests restoring the cut bars with epoxy-doweled supplemental bars of the same size, lapped then patching with non-shrink concrete or grout. Special inspection would be done before closing the slab. This is only a suggestion and needs SEOR review and approval.",
+      "discipline": "Engineer",
+      "due": "2026-11-04",
+      "received": "2026-11-03",
+      "status": "To assign",
+      "priority": "High",
+      "owner": "",
+      "consultant": "",
+      "nextAction": "Assign a reviewer and record the next action.",
+      "sourceDate": "2026-11-03T21:08:47Z",
+      "detectedAt": "2026-11-03T22:00:38.567Z",
+      "triagedAt": "",
+      "importedBaseline": false,
+      "pdfTotal": 0,
+      "pdfFiled": 0,
+      "pdfStatus": "No PDF attached"
+    },
+    {
       "id": "item-dbc9e2d61aaf74bb9a7a1d1e",
       "project": "Santa Monica",
       "type": "Submittal",
@@ -2790,8 +2813,8 @@
       "detectedAt": "2026-11-02T23:00:33.927Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
+      "pdfTotal": 3,
+      "pdfFiled": 3,
       "pdfStatus": "Verified in Box"
     },
     {
