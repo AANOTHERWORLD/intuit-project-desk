@@ -101,7 +101,7 @@ function renderIssueContext(x){
  }
 }
 let lastFocus=null;
-function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').innerHTML='<option>'+esc(workflowLabel(x))+'</option>';$('status').selectedIndex=0;$('consultant').value=teamFor(x.consultant);$('consultant').disabled=!active(x);$('copyAssignment').disabled=!active(x);previewAssignment();$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderIssueContext(x);renderDocuments(x);$('close').focus()}
+function openItem(x){if(!x)return;currentItem=x.id;lastFocus=document.activeElement;$('overlay').hidden=false;$('detailProject').textContent=x.project+' / '+x.type+' '+x.number;for(const k of ['subject','number','due','received','discipline','nextAction'])$(k).value=x[k]||'';$('reviewWindow').value=reviewWindow(x);$('editProject').value=x.project;$('editType').value=x.type;$('editOwner').value=x.owner||'';$('status').innerHTML=statuses.map(s=>'<option>'+s+'</option>').join('');$('status').innerHTML='<option>'+esc(workflowLabel(x))+'</option>';$('status').selectedIndex=0;$('consultant').value=teamFor(x.consultant);$('consultant').disabled=!active(x);$('copyAssignment').disabled=!active(x);previewAssignment();$('markComplete').hidden=!active(x);$('removeCompletion').hidden=!x.manualComplete;$('completionState').textContent=x.manualComplete?'Completed by manual override on '+fmt(x.completedAt):x.completionMethod||'Follows Smartsheet status.';$('triaged').checked=!!x.triagedAt;$('sourceDate').textContent='Source updated '+fmt(x.sourceDate)+(x.triagedAt?' · Triaged '+fmt(x.triagedAt):' · Awaiting triage');$('pdfDetails').textContent=x.pdfTotal?String(x.pdfFiled||0)+' of '+x.pdfTotal+' PDF attachments verified in Box. '+(x.pdfStatus||'Pending verification'):'No PDF attachment listed in the source.';renderIssueContext(x);renderDocuments(x);$('close').focus()}
 function closeItem(){$('overlay').hidden=true;currentItem=null;lastFocus?.focus()}
 $('close').onclick=closeItem;$('overlay').onclick=e=>{if(e.target===$('overlay'))closeItem()};
 $('form').onsubmit=e=>e.preventDefault();
@@ -122,6 +122,15 @@ $('copyAssignment').onclick=()=>{
  const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open assignment form ↗';
  $('saveState').append(message,link);
 };
+function completionForm(choice){
+ const item=items.find(x=>x.id===currentItem);if(!item)return;
+ const url=new URL('https://new-form-project-1319a1.zapier.app/');
+ url.searchParams.set('item_id',item.id);url.searchParams.set('consultant_team',choice);
+ window.open(url.href,'_blank','noopener,noreferrer');
+ $('saveState').textContent='Confirm "'+choice+'" in the protected form. This page updates after processing.';
+}
+$('markComplete').onclick=()=>completionForm('Mark complete');
+$('removeCompletion').onclick=()=>completionForm('Remove completion override');
 document.querySelectorAll('#form input,#form textarea').forEach(el=>el.readOnly=true);
 document.querySelectorAll('#form select:not(#consultant),#form input[type=checkbox]').forEach(el=>el.disabled=true);
 document.addEventListener('keydown',e=>{if($('overlay').hidden)return;if(e.key==='Escape')closeItem();if(e.key==='Tab'){const focusables=[...$('overlay').querySelectorAll('button,a[href],input:not([disabled]),textarea')];const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
@@ -142,7 +151,7 @@ async function refresh(){
   if(data.schemaVersion!==1||!Array.isArray(data.items)||data.items.length>10000)throw new Error('The register format is invalid.');
   const ids=new Set();
   for(const item of data.items){if(!item||typeof item.id!=='string'||ids.has(item.id)||!projects.includes(item.project)||!['RFI','Submittal'].includes(item.type)||!statuses.includes(item.status)||typeof item.subject!=='string')throw new Error('A published record is invalid.');ids.add(item.id)}
-  items=data.items.map(x=>x.status==='Returned to GC'?{...x,status:'Closed'}:x);loaded=true;
+  items=data.items;loaded=true;
   const prev=$('owner').value;$('owner').innerHTML='<option>All owners</option><option>Unassigned</option>'+[...new Set(items.map(x=>x.owner).filter(Boolean))].sort().map(o=>'<option>'+esc(o)+'</option>').join('');if([...$('owner').options].some(o=>o.value===prev))$('owner').value=prev;
   const lastPull=data.lastSuccessfulSyncAt||data.sourceUpdatedAt, lastTime=lastPull?new Date(lastPull):null, stale=data.syncConnected&&(!lastTime||Date.now()-lastTime.getTime()>Math.max(120,2*(data.refreshIntervalMinutes||60))*60000);
   const stamp=lastTime&&!Number.isNaN(lastTime.getTime())?lastTime.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'not yet available';
@@ -152,7 +161,7 @@ async function refresh(){
   const total=items.reduce((n,x)=>n+(Number(x.pdfTotal)||0),0),filed=items.reduce((n,x)=>n+(Number(x.pdfFiled)||0),0),errors=Number(data.filing?.failedThisRun)||0;
   $('filingDetails').textContent=(data.filing?.connected?'PDF filing connected. ':'PDF filing has not been activated. ')+filed+' of '+total+' current PDF attachments verified in Box.'+(errors?' '+errors+' transfer checks failed in the latest run.':'')+(data.filing?.backfillPending?' Initial filing or verification remains in progress.':'');
   $('incomingNote').textContent=items.some(x=>x.importedBaseline)?'Imported source records are included until triaged. New arrivals and revisions return to this queue; closed items are excluded.':'Source records awaiting triage. Closed items are excluded.';
-  $('loadError').hidden=true;render();
+  $('loadError').hidden=true;render();if(!currentItem){const linked=items.find(x=>x.id===new URLSearchParams(location.search).get('item'));if(linked)openItem(linked);}
   if(currentItem&&!$('overlay').hidden){const updated=items.find(x=>x.id===currentItem);if(updated)openItem(updated);else closeItem()}
  }catch(err){$('loadError').hidden=false;$('loadError').textContent=(loaded?'Refresh failed. Showing the last loaded data. ':'Data unavailable. Counts are not yet known. ')+err.message;$('dataStatus').textContent=loaded?'Data may be stale · refresh failed':'Shared register unavailable'}
  finally{loading=false;$('refresh').disabled=false}
