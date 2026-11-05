@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-05T21:16:14.441Z",
-  "lastSuccessfulSyncAt": "2026-11-05T21:16:14.441Z",
+  "sourceUpdatedAt": "2026-11-05T22:00:51.658Z",
+  "lastSuccessfulSyncAt": "2026-11-05T22:00:51.658Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": false,
-    "failedThisRun": 0
+    "backfillPending": true,
+    "failedThisRun": 1
   },
   "items": [
     {
@@ -3226,8 +3226,8 @@
       "manualComplete": false
     },
     {
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Closed",
+      "completionMethod": "Smartsheet approval/closed",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-6848e63e115425ecc0328f99",
@@ -3242,13 +3242,13 @@
       "priority": "Medium",
       "owner": "",
       "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-02T16:43:14Z",
+      "nextAction": "",
+      "sourceDate": "2026-11-05T21:26:55Z",
       "detectedAt": "2026-10-29T17:00:18.048Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
+      "pdfTotal": 2,
+      "pdfFiled": 2,
       "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
@@ -3734,8 +3734,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 3,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 2,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     }
   ]
