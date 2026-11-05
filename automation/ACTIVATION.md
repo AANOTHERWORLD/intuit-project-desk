@@ -1,6 +1,10 @@
-# Workflow update: activation checklist
+# Workflow deployment status
 
-Implementation is prepared but not activated. Do not merge the UI until both Zapier functions and the protected form are updated. The browser currently requires Zapier sign-in. No live Smartsheet rows have been modified.
+Deployed November 5, 2026. Scheduled Zap v4 and protected-form Zap v5 are published and on. PR #3 is merged. The form retains password protection and now offers Mark complete and Remove completion override.
+
+Validation: all eight workflow tests pass. Live scheduled dry run read 138 records, 20 active, with Gmail review enabled and no errors (0 matches). Production baseline completed in 112.7 seconds, with 0 filing failures, 0 closure emails, and no backfill pending. One pre-existing consultant delivery requires manual verification and was not resent. Dashboard completion button and form URL parameters verified. The form test rejected its old, now-closed sample, confirming the closed-item assignment safeguard.
+
+The form handler uses emailReviewEnabled=false to avoid a full mailbox scan on each submission; scheduled hourly review uses true. Both have closure notifications enabled for the four verified Rapt recipients. No Smartsheet rows were edited. Live completion submission/undo and a newly triggered closure email have not been exercised on a real project item; unit coverage is complete, but delivery of a future closure still needs observation.
 
 ## Confirmed missed return
 
@@ -26,7 +30,7 @@ Santa Monica Fire Alarm Plans remained active in the November 5 published regist
 - Stores message/thread evidence in the private ledger. Public data exposes only team and forwarding/response timestamps, not message content or Gmail links.
 - Completion is determined by Smartsheet or explicit override. An arbitrary attachment or free-text response is not sufficient to close an item.
 - Closure history initializes silently. New closures send once per observed active-to-complete cycle. An unobserved reopen/reclose between syncs is not separately notified.
-- Mail matching has not yet been tested against the live Zapier Gmail connection. Validate runtime with current mailbox volume before enabling the hourly job.
+- Live Gmail review succeeded without errors but matched no items in the deployment run. Additional project aliases or subject variants may require configuration changes.
 
 ## Local validation
 
