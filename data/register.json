@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-05T17:00:45.028Z",
-  "lastSuccessfulSyncAt": "2026-11-05T17:00:45.028Z",
+  "sourceUpdatedAt": "2026-11-05T18:00:47.874Z",
+  "lastSuccessfulSyncAt": "2026-11-05T18:00:47.874Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": false,
+    "backfillPending": true,
     "failedThisRun": 0
   },
   "items": [
@@ -215,8 +215,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box"
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification"
     },
     {
       "id": "item-ca863ec1ce8034c7fb2b228b",
@@ -256,7 +256,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-10-23T22:14:18Z",
+      "sourceDate": "2026-11-05T17:24:31Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -394,7 +394,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-10-23T22:14:18Z",
+      "sourceDate": "2026-11-05T17:24:31Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -665,12 +665,12 @@
       "discipline": "Engineer",
       "due": "2026-10-29",
       "received": "2026-10-23",
-      "status": "Returned to GC",
+      "status": "Closed",
       "priority": "High",
       "owner": "",
       "consultant": "",
       "nextAction": "Verify current status in Smartsheet and assign a reviewer.",
-      "sourceDate": "2026-10-29T16:03:53Z",
+      "sourceDate": "2026-11-05T17:24:31Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -693,7 +693,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-10-23T15:48:23Z",
+      "sourceDate": "2026-11-05T17:24:31Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -716,7 +716,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "Verify current status in Smartsheet and assign a reviewer.",
-      "sourceDate": "2026-10-30T13:29:29Z",
+      "sourceDate": "2026-11-05T17:24:31Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -1549,8 +1549,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box"
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification"
     },
     {
       "id": "item-5f32724e98e8e2c5b66cc008",
@@ -1664,8 +1664,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box"
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification"
     },
     {
       "id": "item-bb73493776363b3c0070d29d",
@@ -2882,8 +2882,8 @@
       "detectedAt": "2026-11-03T20:00:41.103Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
+      "pdfTotal": 3,
+      "pdfFiled": 3,
       "pdfStatus": "Verified in Box"
     },
     {
