@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-05T18:00:47.874Z",
-  "lastSuccessfulSyncAt": "2026-11-05T18:00:47.874Z",
+  "sourceUpdatedAt": "2026-11-05T19:01:24.585Z",
+  "lastSuccessfulSyncAt": "2026-11-05T19:01:24.585Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": true,
+    "backfillPending": false,
     "failedThisRun": 0
   },
   "items": [
@@ -215,8 +215,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-ca863ec1ce8034c7fb2b228b",
@@ -1549,8 +1549,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-5f32724e98e8e2c5b66cc008",
@@ -1664,8 +1664,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification"
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box"
     },
     {
       "id": "item-bb73493776363b3c0070d29d",
@@ -2926,6 +2926,29 @@
       "nextAction": "Assign a reviewer and record the next action.",
       "sourceDate": "2026-11-04T04:27:39Z",
       "detectedAt": "2026-11-04T05:00:41.673Z",
+      "triagedAt": "",
+      "importedBaseline": false,
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box"
+    },
+    {
+      "id": "item-d576a7da2bba3eeafa47a5e9",
+      "project": "Santa Monica",
+      "type": "Submittal",
+      "number": "N/A",
+      "subject": "Millwork Shop Drawings",
+      "question": "Millwork shop drawings for review and submittal",
+      "discipline": "Architect",
+      "due": "2026-11-10",
+      "received": "2026-11-05",
+      "status": "To assign",
+      "priority": "Medium",
+      "owner": "",
+      "consultant": "",
+      "nextAction": "Assign a reviewer and record the next action.",
+      "sourceDate": "2026-11-05T18:11:59Z",
+      "detectedAt": "2026-11-05T19:01:24.585Z",
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 1,
