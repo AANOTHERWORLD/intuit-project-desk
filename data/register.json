@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-09T19:25:06.469Z",
-  "lastSuccessfulSyncAt": "2026-11-09T19:25:06.469Z",
+  "sourceUpdatedAt": "2026-11-09T20:00:50.496Z",
+  "lastSuccessfulSyncAt": "2026-11-09T20:00:50.496Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -3437,9 +3437,9 @@
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
-      "pdfTotal": 0,
-      "pdfFiled": 0,
-      "pdfStatus": "No PDF attached",
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
