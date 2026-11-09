@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-09T22:00:47.904Z",
+  "indexedAt": "2026-11-09T23:00:58.679Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -793,6 +793,14 @@
         {
           "id": "2572783655744",
           "name": "#3-Product data submittals-202611051658.pdf"
+        },
+        {
+          "id": "2580963520104",
+          "name": "#1-Shop Drawing Submittals-20261103-Reviewed_RNR.pdf"
+        },
+        {
+          "id": "2580990224645",
+          "name": "#3-Product data submittals-Reviewed_RNR.pdf"
         }
       ]
     },
