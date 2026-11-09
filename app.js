@@ -58,16 +58,17 @@ function render(){
  document.querySelectorAll('[data-intake-kind]').forEach(b=>b.onclick=()=>{section=b.dataset.intakeKind==='RFI'?'RFIs':'Submittals';$('type').value=b.dataset.intakeKind;filter='New incoming';render();document.querySelector('.tracker').scrollIntoView({behavior:'smooth',block:'start'})});
  document.querySelectorAll('[data-view]').forEach(b=>{b.classList.remove('active');b.classList.toggle('active-nav',b.dataset.view===section)});
 }
-let documents={items:{}};
+let documents={items:{}},documentLoadFailed=false;
+const boxFolders={'Chicago':{RFI:'425238666442',Submittal:'425239435132'},'Santa Monica':{RFI:'388984137557',Submittal:'388985111314'}};
 async function loadDocuments(){
  try{
   const response=await fetch('./data/documents.json',{cache:'no-store'});
-  if(!response.ok)return;
+  if(!response.ok)throw new Error('Document links unavailable');
   const data=await response.json();
-  if(data.schemaVersion!==1||!data.items||typeof data.items!=='object')return;
-  documents=data;
+  if(data.schemaVersion!==1||!data.items||typeof data.items!=='object')throw new Error('Invalid document index');
+  documents=data;documentLoadFailed=false;
   if(currentItem&&!$('overlay').hidden)renderDocuments(items.find(x=>x.id===currentItem));
- }catch{ /* The register remains usable when document links are unavailable. */ }
+ }catch{documentLoadFailed=true;if(currentItem&&!$('overlay').hidden)renderDocuments(items.find(x=>x.id===currentItem));}
 }
 function renderDocuments(x){
  if(!x)return;
@@ -76,11 +77,15 @@ function renderDocuments(x){
  const files=Array.isArray(entry?.files)?entry.files.filter(f=>/^\d+$/.test(String(f.id))&&typeof f.name==='string'):[];
  target.replaceChildren();
  const note=document.createElement('p');note.className='source-date';
- note.textContent=files.length?'Preview PDFs in Box. Your existing Box access applies.':x.pdfTotal?'PDF links are awaiting indexing.':'No PDF is currently listed for this item.';
+ note.textContent=files.length?'Preview PDFs in Box. Your existing Box access applies.':documentLoadFailed?'PDF links could not be loaded. Open the project folder in Box below.':x.pdfTotal?'Individual PDF links are syncing. Open the project folder in Box below.':'No PDF is currently listed for this item.';
  target.append(note);
  for(const file of files){
   const link=document.createElement('a');link.href='https://app.box.com/file/'+file.id;link.target='_blank';link.rel='noopener noreferrer';link.className='secondary';link.style.cssText='display:block;margin:8px 0;white-space:normal;text-align:left';
   link.textContent=file.name+' ↗';link.setAttribute('aria-label','Preview PDF in Box: '+file.name);target.append(link);
+ }
+ const folder=boxFolders[x.project]?.[x.type];
+ if(folder&&(files.length||x.pdfTotal||documentLoadFailed)){
+  const link=document.createElement('a');link.href='https://app.box.com/folder/'+folder;link.target='_blank';link.rel='noopener noreferrer';link.className='secondary';link.textContent='Open '+x.project+' '+(x.type==='RFI'?'RFI':'submittal')+' folder in Box ↗';target.append(link);
  }
 }
 function renderIssueContext(x){

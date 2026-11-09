@@ -240,6 +240,37 @@ async function notifyClosures({items,cfg,zapier,ledger,save,now}){
 const zapier=createZapierSdk();
 const sources=[{id:'5052138748071812',type:'RFI',question:'Question:',subject:'RFI Subject',number:'RFI #',discipline:'Questions for:',due:'Response Required by:',closed:'RFI Closed',returned:'Arch. Response Submitted Date'},{id:'2468986770902916',type:'Submittal',question:'Question/Comment/Request:',subject:'Submittal Name',number:"Submittal Reference (ie. R1 to 'Submittal Name')",discipline:'Submittal Review for:',due:'Response Required By Date',closed:'Submittal Approved',returned:'Date of Response'}];
 const folders={'Chicago':{RFI:'425238666442',Submittal:'425239435132'},'Santa Monica':{RFI:'388984137557',Submittal:'388985111314'}};
+// Build links from the same verified ledger used for the PDF filing count.
+function documentIndex(rows,ledger,now){
+ const index={schemaVersion:1,indexedAt:now,items:{}};
+ for(const entry of rows){
+  const files=new Map();
+  for(const attachment of entry.pdfs){
+   const root=ledger.get('root/'+entry.sheet+'/'+entry.row.id+'/'+attachment.id)?.v;
+   for(const version of root?.versions||[]){
+    const id=String(ledger.get('pdf/'+entry.sheet+'/'+entry.row.id+'/'+version.id)?.v?.boxFile||'');
+    if(/^\d+$/.test(id))files.set(id,{id,name:String(version.name||attachment.name||'PDF attachment')});
+   }
+  }
+  index.items[entry.item.id]={files:[...files.values()]};
+ }
+ return index;
+}
+async function publishDocumentIndex({rows,ledger,now,cfg,zapier}){
+ const index=documentIndex(rows,ledger,now);
+ const url='https://api.github.com/repos/AANOTHERWORLD/intuit-project-desk/contents/data/documents.json';
+ for(let attempt=0;attempt<3;attempt++){
+  const response=await zapier.fetch(url+'?ref=main',{connection:cfg.github});
+  if(!response.ok&&response.status!==404)throw new Error('Document index read failed '+response.status);
+  const prior=response.status===404?{}:await response.json();
+  const result=await zapier.fetch(url,{connection:cfg.github,method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({branch:'main',...(prior.sha?{sha:prior.sha}:{}),message:'Sync verified Box PDF links',content:Buffer.from(JSON.stringify(index,null,2)+'\n').toString('base64')})});
+  if([409,422].includes(result.status)&&attempt<2)continue;
+  if(!result.ok)throw new Error('Document index publish failed '+result.status);
+  const saved=await result.json();if(!saved.commit?.sha)throw new Error('Document index publish unconfirmed');
+  return {published:true,records:Object.keys(index.items).length,files:Object.values(index.items).reduce((n,x)=>n+x.files.length,0),commit:saved.commit.sha};
+ }
+}
+
 export default async function main({inputData}){
  const cfg=JSON.parse(inputData.config_json||'{}');for(const k of ['smartsheet','github','box','ledger'])if(!cfg[k])throw new Error('Missing config '+k);
  const start=Date.now(),now=new Date().toISOString(),base='https://api.github.com/repos/AANOTHERWORLD/intuit-project-desk/contents/data/register.json';
@@ -263,6 +294,10 @@ export default async function main({inputData}){
  if(!items.length)throw new Error('Refusing to publish an empty register');
  const ledger=new Map();for await(const page of zapier.listTableRecords({table:cfg.ledger,keyMode:'names',pageSize:1000,maxItems:10000}).pages()){for(const r of page.data)if(r.data.sourceKey&&r.data.payload){let value;try{value=JSON.parse(r.data.payload)}catch{if(!String(r.data.sourceKey).startsWith('root/'))throw new Error('Filing verification ledger is invalid');value=null}ledger.set(r.data.sourceKey,{id:r.id,v:value})};if(page.nextCursor&&ledger.size>=10000)throw new Error('Ledger read incomplete')}
  async function save(key,v){if(JSON.stringify(v).length>10000)throw new Error('Ledger record exceeds safe field capacity');const old=ledger.get(key),record={data:{sourceKey:key,payload:JSON.stringify(v)}};const r=old?await zapier.updateTableRecords({table:cfg.ledger,records:[{id:old.id,...record}]}):await zapier.createTableRecords({table:cfg.ledger,records:[record]});if(!r.data?.[0]?.id)throw new Error('Ledger write not confirmed');ledger.set(key,{id:r.data[0].id,v})}
+ if(inputData.index_documents_only==='true'){
+  if(cfg.dryRun)return {published:false,dryRun:true,index:documentIndex(rows,ledger,now)};
+  return publishDocumentIndex({rows,ledger,now,cfg,zapier});
+ }
  const initialOverrides=await readOverrides(zapier,cfg);
  for(const item of items)applyCompletion(item,initialOverrides.data.items[item.id]);
  let emailReview;
@@ -298,5 +333,6 @@ export default async function main({inputData}){
  if(!cfg.dryRun)try{consultantEmail=await processConsultantAssignments({items,rows,cfg,zapier,ledger,save,now,start})}catch(e){consultantEmail={error:String(e.message).slice(0,160)}}
  validate();
  if(cfg.dryRun)return {published:false,dryRun:true,emailReview,records:items.length,questionsWithText:items.filter(x=>x.question.trim()).length,active:items.filter(x=>!isComplete(x)).length,pdfs:rows.reduce((n,r)=>n+r.pdfs.length,0),counts:items.reduce((c,x)=>(c[x.project+' '+x.type]=(c[x.project+' '+x.type]||0)+1,c),{})};
+ await publishDocumentIndex({rows,ledger,now,cfg,zapier});
  for(let attempt=0;attempt<3;attempt++){const file=await get(base+'?ref=main',cfg.github),current=JSON.parse(Buffer.from(file.content.replace(/\s/g,''),'base64').toString('utf8'));const freshOverrides=await readOverrides(zapier,cfg);for(const item of payload.items){applyCompletion(item,freshOverrides.data.items[item.id]);const old=current.items?.find(x=>x.id===item.id);if(old)for(const k of (item.forwardedAt?['owner','triagedAt']:['owner','consultant','nextAction','triagedAt']))if(Object.hasOwn(old,k))item[k]=String(old[k]||'');if(isComplete(item))item.nextAction='';if(!item.owner||!item.nextAction||rows.find(r=>r.item.id===item.id)?.retriage)item.triagedAt=''}validate();const r=await zapier.fetch(base,{connection:cfg.github,method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({branch:'main',sha:file.sha,message:'Sync Intuit register from Smartsheet',content:Buffer.from(JSON.stringify(payload,null,2)+'\n').toString('base64')})});if((r.status===409||r.status===422)&&attempt<2)continue;if(!r.ok)throw new Error('Publishing failed '+r.status);const confirm=await r.json();if(!confirm.commit?.sha)throw new Error('Publish unconfirmed');let closureEmail;try{closureEmail=await notifyClosures({items:payload.items,cfg,zapier,ledger,save,now})}catch(e){closureEmail={error:String(e.message).slice(0,160)}}return {published:true,consultantEmail,closureEmail,emailReview,commit:confirm.commit.sha,records:items.length,questionsWithText:items.filter(x=>x.question.trim()).length,active:items.filter(x=>!isComplete(x)).length,copied,duplicates,failed,backfillPending:payload.filing.backfillPending,failures}}
 }
