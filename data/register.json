@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-09T22:00:47.904Z",
-  "lastSuccessfulSyncAt": "2026-11-09T22:00:47.904Z",
+  "sourceUpdatedAt": "2026-11-09T23:00:58.679Z",
+  "lastSuccessfulSyncAt": "2026-11-09T23:00:58.679Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": false,
+    "backfillPending": true,
     "failedThisRun": 0
   },
   "items": [
@@ -1007,8 +1007,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 1,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3194,8 +3194,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3248,8 +3248,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": true,
       "completedAt": "2026-11-05T21:16:14.441Z"
     },
@@ -3497,8 +3497,8 @@
       "manualComplete": false
     },
     {
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Returned to GC",
+      "completionMethod": "Smartsheet response date",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-0f9cbeaff31612c932e9bf34",
@@ -3513,13 +3513,13 @@
       "priority": "Medium",
       "owner": "",
       "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-04T15:32:32Z",
+      "nextAction": "",
+      "sourceDate": "2026-11-09T22:25:23Z",
       "detectedAt": "2026-11-03T20:00:41.103Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 3,
-      "pdfFiled": 3,
+      "pdfTotal": 5,
+      "pdfFiled": 5,
       "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
@@ -3816,8 +3816,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3843,8 +3843,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
