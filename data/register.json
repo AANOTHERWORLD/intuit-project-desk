@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-09T17:00:17.432Z",
-  "lastSuccessfulSyncAt": "2026-11-09T17:00:17.432Z",
+  "sourceUpdatedAt": "2026-11-09T18:00:21.682Z",
+  "lastSuccessfulSyncAt": "2026-11-09T18:00:21.682Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -790,8 +790,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1060,8 +1060,8 @@
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1087,8 +1087,8 @@
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 3,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 3,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1114,8 +1114,8 @@
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -2626,8 +2626,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -2815,8 +2815,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -2896,8 +2896,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -2923,8 +2923,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -2950,8 +2950,8 @@
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 2,
-      "pdfFiled": 1,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3090,6 +3090,33 @@
       "manualComplete": false
     },
     {
+      "status": "To assign",
+      "completionMethod": "",
+      "forwardedAt": "",
+      "consultantRespondedAt": "",
+      "id": "item-cec91651bccb4274de0d8396",
+      "project": "Santa Monica",
+      "type": "RFI",
+      "number": "RFI-77",
+      "subject": "Door Hardware Submittal Clarifications",
+      "question": "Please refer to the attached RFI.",
+      "discipline": "Architect",
+      "due": "2026-11-11",
+      "received": "2026-11-09",
+      "priority": "High",
+      "owner": "",
+      "consultant": "",
+      "nextAction": "Assign a reviewer and record the next action.",
+      "sourceDate": "2026-11-09T17:45:06Z",
+      "detectedAt": "2026-11-09T18:00:21.682Z",
+      "triagedAt": "",
+      "importedBaseline": false,
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
+      "manualComplete": false
+    },
+    {
       "status": "Returned to GC",
       "completionMethod": "Smartsheet response date",
       "forwardedAt": "",
@@ -3112,8 +3139,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3166,8 +3193,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3248,8 +3275,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3275,8 +3302,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3302,8 +3329,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3329,8 +3356,8 @@
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3383,8 +3410,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3608,75 +3635,21 @@
       "completionMethod": "",
       "forwardedAt": "",
       "consultantRespondedAt": "",
-      "id": "item-090fb2a54d41ec9efb5fcf3d",
+      "id": "item-edf1832ff77fee15cf1c327d",
       "project": "Santa Monica",
       "type": "Submittal",
       "number": "N/A",
-      "subject": "Eversys Espresso Machine",
-      "question": "Eversys Cameo C2MS/Classic product data",
+      "subject": "Appliances",
+      "question": "Appliance product data",
       "discipline": "Architect",
       "due": "2026-11-16",
-      "received": "2026-11-09",
+      "received": "2026-11-05",
       "priority": "Medium",
       "owner": "",
       "consultant": "",
       "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-09T16:49:26Z",
-      "detectedAt": "2026-11-09T17:00:17.432Z",
-      "triagedAt": "",
-      "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
-      "manualComplete": false
-    },
-    {
-      "status": "To assign",
-      "completionMethod": "",
-      "forwardedAt": "",
-      "consultantRespondedAt": "",
-      "id": "item-f661547348626611a95b7f44",
-      "project": "Santa Monica",
-      "type": "Submittal",
-      "number": "N/A",
-      "subject": "Summit Refrigerator Appliances (AP 11, AP 12 & AP 13)",
-      "question": "Summit Refrigerator Appliances product data",
-      "discipline": "Architect",
-      "due": "2026-11-16",
-      "received": "2026-11-09",
-      "priority": "Medium",
-      "owner": "",
-      "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-09T16:59:32Z",
-      "detectedAt": "2026-11-09T17:00:17.432Z",
-      "triagedAt": "",
-      "importedBaseline": false,
-      "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
-      "manualComplete": false
-    },
-    {
-      "status": "To assign",
-      "completionMethod": "",
-      "forwardedAt": "",
-      "consultantRespondedAt": "",
-      "id": "item-bf97f11ebe3405f9faf48eed",
-      "project": "Santa Monica",
-      "type": "Submittal",
-      "number": "N/A",
-      "subject": "LG Dishwasher Studio SDWD24P3 (AP 08)",
-      "question": "LG Dishwasher Studio SDWD24P3 (AP 08)",
-      "discipline": "Architect",
-      "due": "2026-11-16",
-      "received": "2026-11-09",
-      "priority": "Medium",
-      "owner": "",
-      "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-09T16:59:32Z",
-      "detectedAt": "2026-11-09T17:00:17.432Z",
+      "sourceDate": "2026-11-09T17:40:33Z",
+      "detectedAt": "2026-11-09T18:00:21.682Z",
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 1,
@@ -3761,8 +3734,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 3,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3788,8 +3761,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3869,8 +3842,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3923,8 +3896,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 3,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 3,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     }
   ]
