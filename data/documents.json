@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-09T20:00:50.496Z",
+  "indexedAt": "2026-11-09T21:00:44.824Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -500,6 +500,10 @@
     "item-0330b031f3fd5e1750d48fd4": {
       "files": [
         {
+          "id": "2580815756750",
+          "name": "RFI-074 - Raise Door Headers for Electrical Conduit Routing - RS-JW.pdf"
+        },
+        {
           "id": "2572681933830",
           "name": "RFI-074 - Raise Door Headers for Electrical Conduit Routing.pdf"
         }
@@ -521,6 +525,14 @@
         {
           "id": "2580621227736",
           "name": "RFI-077 - Door Hardware Submittal Clarifications.pdf"
+        }
+      ]
+    },
+    "item-4094e3e7c6da476a95a80666": {
+      "files": [
+        {
+          "id": "2580871051083",
+          "name": "RFI-078 - Planters at Level 1 Virtual Pods.pdf"
         }
       ]
     },
