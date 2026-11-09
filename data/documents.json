@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-09T21:00:44.824Z",
+  "indexedAt": "2026-11-09T22:00:47.904Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -858,6 +858,10 @@
     },
     "item-edf1832ff77fee15cf1c327d": {
       "files": [
+        {
+          "id": "2580958854089",
+          "name": "Intuit SM Appliance Submittal.pdf"
+        },
         {
           "id": "2580628912326",
           "name": "Intuit SM Appliance Submittal - Tagged.pdf"
