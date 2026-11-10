@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-10T00:00:27.331Z",
+  "indexedAt": "2026-11-10T01:00:31.673Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -761,6 +761,10 @@
         {
           "id": "2566706188175",
           "name": "BBI-0006-26-INTUIT SANTA MONICA_Transmittal Log_TR#05.pdf"
+        },
+        {
+          "id": "2581142865182",
+          "name": "BBI-0006-26 INTUIT SANTA MONICA-MAIN STEEL_RE-IFA- SF Response RS -AN.pdf"
         }
       ]
     },
@@ -821,11 +825,19 @@
         {
           "id": "2569320378741",
           "name": "ACT & Tectum Clouds Submittal.pdf"
+        },
+        {
+          "id": "2581159739876",
+          "name": "ACT & Tectum Clouds Submittal-RS NE.pdf"
         }
       ]
     },
     "item-8e58582d32c4b6b4062aa1fe": {
       "files": [
+        {
+          "id": "2581124020661",
+          "name": "Intuit SM - Curved Barn Door Submittal for AOR Review_RS REVIEW - MCN.pdf"
+        },
         {
           "id": "2570709691084",
           "name": "Intuit SM - Curved Barn Door Submittal for AOR Review.pdf"
