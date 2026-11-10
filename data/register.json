@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-10T15:00:20.221Z",
-  "lastSuccessfulSyncAt": "2026-11-10T15:00:20.221Z",
+  "sourceUpdatedAt": "2026-11-10T16:00:19.675Z",
+  "lastSuccessfulSyncAt": "2026-11-10T16:00:19.675Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": false,
+    "backfillPending": true,
     "failedThisRun": 0
   },
   "items": [
@@ -3194,8 +3194,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3248,8 +3248,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": true,
       "completedAt": "2026-11-05T21:16:14.441Z"
     },
@@ -3443,8 +3443,8 @@
       "manualComplete": false
     },
     {
-      "status": "Returned to GC",
-      "completionMethod": "Smartsheet response date",
+      "status": "Closed",
+      "completionMethod": "Smartsheet approval/closed",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-03b22c64f173a11b271948cd",
@@ -3460,7 +3460,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "",
-      "sourceDate": "2026-11-10T02:29:43Z",
+      "sourceDate": "2026-11-10T15:43:27Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -3686,6 +3686,33 @@
       "manualComplete": false
     },
     {
+      "status": "To assign",
+      "completionMethod": "",
+      "forwardedAt": "",
+      "consultantRespondedAt": "",
+      "id": "item-d190a123bb38be56bbaaf41c",
+      "project": "Santa Monica",
+      "type": "Submittal",
+      "number": "N/A",
+      "subject": "Storefront & Glazing",
+      "question": "Storefront and glazing shop drawings",
+      "discipline": "Architect",
+      "due": "2026-11-13",
+      "received": "2026-11-10",
+      "priority": "Medium",
+      "owner": "",
+      "consultant": "",
+      "nextAction": "Assign a reviewer and record the next action.",
+      "sourceDate": "2026-11-10T15:48:32Z",
+      "detectedAt": "2026-11-10T16:00:19.675Z",
+      "triagedAt": "",
+      "importedBaseline": false,
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
+      "manualComplete": false
+    },
+    {
       "status": "Returned to GC",
       "completionMethod": "Smartsheet response date",
       "forwardedAt": "",
@@ -3816,8 +3843,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3843,8 +3870,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
