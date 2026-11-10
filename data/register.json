@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-10T16:00:19.675Z",
-  "lastSuccessfulSyncAt": "2026-11-10T16:00:19.675Z",
+  "sourceUpdatedAt": "2026-11-10T17:00:20.412Z",
+  "lastSuccessfulSyncAt": "2026-11-10T17:00:20.412Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -115,8 +115,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -169,8 +169,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -250,8 +250,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -425,7 +425,7 @@
       "project": "Chicago",
       "type": "RFI",
       "number": "16",
-      "subject": "Dirtt Millowork Questions",
+      "subject": "Dirtt Millwork Questions",
       "question": "See attached sketch with remarks\n10/15/26 Revised submittals coming",
       "discipline": "Architect",
       "due": "2026-10-08",
@@ -434,7 +434,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "",
-      "sourceDate": "2026-11-06T17:18:37Z",
+      "sourceDate": "2026-11-10T16:21:59Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -1844,8 +1844,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -1952,8 +1952,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -1979,8 +1979,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3194,8 +3194,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3248,8 +3248,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": true,
       "completedAt": "2026-11-05T21:16:14.441Z"
     },
@@ -3843,8 +3843,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -3870,8 +3870,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
