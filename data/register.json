@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-10T17:00:20.412Z",
-  "lastSuccessfulSyncAt": "2026-11-10T17:00:20.412Z",
+  "sourceUpdatedAt": "2026-11-10T18:00:17.838Z",
+  "lastSuccessfulSyncAt": "2026-11-10T18:00:17.838Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": true,
+    "backfillPending": false,
     "failedThisRun": 0
   },
   "items": [
@@ -115,8 +115,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -169,8 +169,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -250,8 +250,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1844,8 +1844,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1952,8 +1952,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
@@ -1979,8 +1979,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 0,
-      "pdfStatus": "Pending filing or verification",
+      "pdfFiled": 2,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
