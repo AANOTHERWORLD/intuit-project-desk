@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-10T19:00:21.802Z",
+  "indexedAt": "2026-11-10T20:00:19.401Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -905,6 +905,10 @@
         {
           "id": "2580628912326",
           "name": "Intuit SM Appliance Submittal - Tagged.pdf"
+        },
+        {
+          "id": "2582892028684",
+          "name": "Intuit SM Appliance Submittal_RS - RNR.pdf"
         }
       ]
     },
