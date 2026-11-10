@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-10T19:00:21.802Z",
-  "lastSuccessfulSyncAt": "2026-11-10T19:00:21.802Z",
+  "sourceUpdatedAt": "2026-11-10T20:00:19.401Z",
+  "lastSuccessfulSyncAt": "2026-11-10T20:00:19.401Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -3276,8 +3276,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3438,8 +3438,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 1,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3659,8 +3659,8 @@
       "manualComplete": false
     },
     {
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Returned to GC",
+      "completionMethod": "Smartsheet response date",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-edf1832ff77fee15cf1c327d",
@@ -3675,13 +3675,13 @@
       "priority": "Medium",
       "owner": "",
       "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-09T21:31:29Z",
+      "nextAction": "",
+      "sourceDate": "2026-11-10T19:34:00Z",
       "detectedAt": "2026-11-09T18:00:21.682Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 2,
-      "pdfFiled": 2,
+      "pdfTotal": 3,
+      "pdfFiled": 3,
       "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
@@ -3713,8 +3713,8 @@
       "manualComplete": false
     },
     {
-      "status": "Returned to GC",
-      "completionMethod": "Smartsheet response date",
+      "status": "Closed",
+      "completionMethod": "Smartsheet approval/closed",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-8e58582d32c4b6b4062aa1fe",
@@ -3730,7 +3730,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "",
-      "sourceDate": "2026-11-10T00:18:13Z",
+      "sourceDate": "2026-11-10T19:05:32Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
@@ -3902,8 +3902,8 @@
       "manualComplete": false
     },
     {
-      "status": "Returned to GC",
-      "completionMethod": "Smartsheet response date",
+      "status": "Closed",
+      "completionMethod": "Smartsheet approval/closed",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-de901e382bdd962f4abf589e",
@@ -3919,7 +3919,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "",
-      "sourceDate": "2026-11-10T00:29:17Z",
+      "sourceDate": "2026-11-10T19:05:32Z",
       "detectedAt": "2026-10-29T01:14:53.262Z",
       "triagedAt": "",
       "importedBaseline": true,
