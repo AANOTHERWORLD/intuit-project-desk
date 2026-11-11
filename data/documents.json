@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-11T19:00:50.490Z",
+  "indexedAt": "2026-11-11T20:00:51.138Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -487,7 +487,12 @@
       ]
     },
     "item-3cba4fc3ff89b11577d2c160": {
-      "files": []
+      "files": [
+        {
+          "id": "2585154755098",
+          "name": "SSK 01 - Grade Beam Patch Detail 261110.pdf"
+        }
+      ]
     },
     "item-11c27f287081a82b85150d87": {
       "files": [
