@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-11T14:00:45.986Z",
-  "lastSuccessfulSyncAt": "2026-11-11T14:00:45.986Z",
+  "sourceUpdatedAt": "2026-11-11T15:00:41.285Z",
+  "lastSuccessfulSyncAt": "2026-11-11T15:00:41.285Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
-    "backfillPending": false,
+    "backfillPending": true,
     "failedThisRun": 0
   },
   "items": [
@@ -115,8 +115,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 1,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -169,8 +169,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -250,8 +250,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -1844,8 +1844,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 1,
-      "pdfFiled": 1,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -1979,8 +1979,8 @@
       "triagedAt": "",
       "importedBaseline": true,
       "pdfTotal": 2,
-      "pdfFiled": 2,
-      "pdfStatus": "Verified in Box",
+      "pdfFiled": 0,
+      "pdfStatus": "Pending filing or verification",
       "manualComplete": false
     },
     {
@@ -3137,6 +3137,33 @@
       "nextAction": "Assign a reviewer and record the next action.",
       "sourceDate": "2026-11-09T20:12:55Z",
       "detectedAt": "2026-11-09T21:00:44.824Z",
+      "triagedAt": "",
+      "importedBaseline": false,
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
+      "manualComplete": false
+    },
+    {
+      "status": "To assign",
+      "completionMethod": "",
+      "forwardedAt": "",
+      "consultantRespondedAt": "",
+      "id": "item-8d275a214b8c8834f7215d8f",
+      "project": "Santa Monica",
+      "type": "RFI",
+      "number": "RFI-79",
+      "subject": "Electrical Questions",
+      "question": "Please refer to the attached RFI.",
+      "discipline": "Engineer",
+      "due": "2026-11-13",
+      "received": "2026-11-11",
+      "priority": "High",
+      "owner": "",
+      "consultant": "",
+      "nextAction": "Assign a reviewer and record the next action.",
+      "sourceDate": "2026-11-11T14:56:14Z",
+      "detectedAt": "2026-11-11T15:00:41.285Z",
       "triagedAt": "",
       "importedBaseline": false,
       "pdfTotal": 1,
