@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-11T14:00:45.986Z",
+  "indexedAt": "2026-11-11T15:00:41.285Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -533,6 +533,14 @@
         {
           "id": "2580871051083",
           "name": "RFI-078 - Planters at Level 1 Virtual Pods.pdf"
+        }
+      ]
+    },
+    "item-8d275a214b8c8834f7215d8f": {
+      "files": [
+        {
+          "id": "2584698718927",
+          "name": "RFI-079 - Electrical Clarifications (TRE RFIs 4, 5, 6).pdf"
         }
       ]
     },
