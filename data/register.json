@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-11T19:00:50.490Z",
-  "lastSuccessfulSyncAt": "2026-11-11T19:00:50.490Z",
+  "sourceUpdatedAt": "2026-11-11T20:00:51.138Z",
+  "lastSuccessfulSyncAt": "2026-11-11T20:00:51.138Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -2956,8 +2956,8 @@
       "manualComplete": false
     },
     {
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Returned to GC",
+      "completionMethod": "Smartsheet response date",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-3cba4fc3ff89b11577d2c160",
@@ -2972,14 +2972,14 @@
       "priority": "High",
       "owner": "",
       "consultant": "",
-      "nextAction": "Assign a reviewer and record the next action.",
-      "sourceDate": "2026-11-05T20:22:22Z",
+      "nextAction": "",
+      "sourceDate": "2026-11-11T19:20:36Z",
       "detectedAt": "2026-11-03T22:00:38.567Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "pdfTotal": 0,
-      "pdfFiled": 0,
-      "pdfStatus": "No PDF attached",
+      "pdfTotal": 1,
+      "pdfFiled": 1,
+      "pdfStatus": "Verified in Box",
       "manualComplete": false
     },
     {
