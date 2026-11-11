@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-11T01:00:23.115Z",
+  "indexedAt": "2026-11-11T02:00:41.409Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -877,6 +877,18 @@
         {
           "id": "2572865919691",
           "name": "035 Flagship_CFC SUBM#002 Shop Drawings_261105.pdf"
+        },
+        {
+          "id": "2583381587611",
+          "name": "2026-11-10_INTUIT SM_A440.pdf"
+        },
+        {
+          "id": "2575219285592",
+          "name": "035 Flagship_CFC SUBM#002 Shop Drawings_RS COMMENTS.pdf"
+        },
+        {
+          "id": "2583251207083",
+          "name": "2026-11-10_INTUIT SM_TIERED PLANTER SECTION.pdf"
         }
       ]
     },
