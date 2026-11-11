@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "source": "Smartsheet API",
   "syncConnected": true,
-  "sourceUpdatedAt": "2026-11-11T22:00:49.874Z",
-  "lastSuccessfulSyncAt": "2026-11-11T22:00:49.874Z",
+  "sourceUpdatedAt": "2026-11-11T23:01:03.697Z",
+  "lastSuccessfulSyncAt": "2026-11-11T23:01:03.697Z",
   "refreshIntervalMinutes": 60,
   "filing": {
     "connected": true,
@@ -3064,8 +3064,8 @@
       "manualComplete": false
     },
     {
-      "status": "Returned to GC",
-      "completionMethod": "Smartsheet response date",
+      "status": "Closed",
+      "completionMethod": "Smartsheet approval/closed",
       "forwardedAt": "",
       "consultantRespondedAt": "",
       "id": "item-ec2caa20749b63f7bc3e9d2e",
@@ -3081,7 +3081,7 @@
       "owner": "",
       "consultant": "",
       "nextAction": "",
-      "sourceDate": "2026-11-09T18:37:31Z",
+      "sourceDate": "2026-11-11T22:18:53Z",
       "detectedAt": "2026-11-09T17:00:17.432Z",
       "triagedAt": "",
       "importedBaseline": false,
