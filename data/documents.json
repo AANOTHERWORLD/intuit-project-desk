@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-11T23:01:03.697Z",
+  "indexedAt": "2026-11-12T00:01:15.438Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -371,6 +371,10 @@
         {
           "id": "2580621227736",
           "name": "RFI-077 - Door Hardware Submittal Clarifications.pdf"
+        },
+        {
+          "id": "2581107339803",
+          "name": "RFI-077 - RS Response.pdf"
         }
       ]
     },
