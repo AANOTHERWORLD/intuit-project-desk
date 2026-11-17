@@ -116,9 +116,14 @@ function previewAssignment(){
  $('assignmentPreview').textContent='Saved: '+workflowLabel(item)+'. '+(team===teamFor(item.consultant)?'':'Preview: '+(team?'Assigned to '+team:'Architect review')+'. ' )+'Record ID: '+item.id;
 }
 $('consultant').onchange=previewAssignment;
-$('copyAssignment').onclick=()=>{
+async function reviewFormUrl(){
+ const response=await fetch('./data/flow-settings.json',{cache:'no-store'});if(!response.ok)throw new Error('The Google review form is not connected yet.');
+ const config=await response.json();if(config.schemaVersion!==1||!/^https:\/\/script\.google\.com\/(?:macros|a\/macros\/raptstudio\.com)\/s\/[A-Za-z0-9_-]+\/exec$/.test(config.reviewFormUrl||''))throw new Error('The Google review form is awaiting authorization.');
+ return new URL(config.reviewFormUrl);
+}
+$('copyAssignment').onclick=async()=>{
  const item=items.find(x=>x.id===currentItem);if(!item||!active(item))return;
- const url=new URL('https://new-form-project-1319a1.zapier.app/');
+ let url;try{url=await reviewFormUrl()}catch(e){$('saveState').textContent=e.message;return}
  url.searchParams.set('item_id',item.id);
  url.searchParams.set('consultant_team',$('consultant').value||'Architect review only');
  const opened=window.open(url.href,'_blank','noopener,noreferrer');
@@ -127,12 +132,14 @@ $('copyAssignment').onclick=()=>{
  const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open assignment form ↗';
  $('saveState').append(message,link);
 };
-function completionForm(choice){
+async function completionForm(choice){
  const item=items.find(x=>x.id===currentItem);if(!item)return;
- const url=new URL('https://new-form-project-1319a1.zapier.app/');
+ let url;try{url=await reviewFormUrl()}catch(e){$('saveState').textContent=e.message;return}
  url.searchParams.set('item_id',item.id);url.searchParams.set('consultant_team',choice);
  window.open(url.href,'_blank','noopener,noreferrer');
- $('saveState').textContent='Confirm "'+choice+'" in the protected form. This page updates after processing.';
+ const message=document.createElement('span');message.textContent='Confirm "'+choice+'" in the protected form. This page updates after processing. ';
+ const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open Google review form ↗';
+ $('saveState').replaceChildren(message,link);
 }
 $('markComplete').onclick=()=>completionForm('Mark complete');
 $('removeCompletion').onclick=()=>completionForm('Remove completion override');
@@ -160,11 +167,11 @@ async function refresh(){
   const prev=$('owner').value;$('owner').innerHTML='<option>All owners</option><option>Unassigned</option>'+[...new Set(items.map(x=>x.owner).filter(Boolean))].sort().map(o=>'<option>'+esc(o)+'</option>').join('');if([...$('owner').options].some(o=>o.value===prev))$('owner').value=prev;
   const lastPull=data.lastSuccessfulSyncAt||data.sourceUpdatedAt, lastTime=lastPull?new Date(lastPull):null, stale=data.syncConnected&&(!lastTime||Date.now()-lastTime.getTime()>Math.max(120,2*(data.refreshIntervalMinutes||60))*60000);
   const stamp=lastTime&&!Number.isNaN(lastTime.getTime())?lastTime.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'not yet available';
-  $('dataStatus').textContent=stale?'Source refresh overdue · showing last successful pull':data.syncConnected?'Live source feed · hourly sync':data.lastSuccessfulSyncAt?'Source pull verified · scheduled activation pending':'Published snapshot · Smartsheet sync not connected';
+  $('dataStatus').textContent=stale?'Source refresh overdue · showing last verified register':data.syncConnected?(data.refreshIntervalMinutes>=1440?'Google flow · daily full-register checks':'Live source feed · hourly sync'):data.lastSuccessfulSyncAt?'Source pull verified · scheduled activation pending':'Published snapshot · Smartsheet sync not connected';
   $('dataDetail').textContent=items.length+' records · last source pull '+stamp+'. Page checks for published updates every minute.';
   $('syncDetails').textContent=$('dataStatus').textContent+'. Last successful source pull: '+stamp+'.';
   const total=items.reduce((n,x)=>n+(Number(x.pdfTotal)||0),0),filed=items.reduce((n,x)=>n+(Number(x.pdfFiled)||0),0),errors=Number(data.filing?.failedThisRun)||0;
-  $('filingDetails').textContent=(data.filing?.connected?'PDF filing connected. ':'PDF filing has not been activated. ')+filed+' of '+total+' current PDF attachments verified in Box.'+(errors?' '+errors+' transfer checks failed in the latest run.':'')+(data.filing?.backfillPending?' Initial filing or verification remains in progress.':'');
+  $('filingDetails').textContent=(data.filing?.connected?'PDF filing connected. ':'PDF filing has not been activated. ')+(data.filing?.backfillPending?'Historical inventory: '+filed+' verified links against '+total+' previously listed attachments. Current attachment coverage is still being reconciled.':filed+' of '+total+' current PDF attachments verified in Box.')+(errors?' '+errors+' transfer checks need review.':'');
   $('incomingNote').textContent=items.some(x=>x.importedBaseline)?'Imported source records are included until triaged. New arrivals and revisions return to this queue; closed items are excluded.':'Source records awaiting triage. Closed items are excluded.';
   $('loadError').hidden=true;render();if(!currentItem){const linked=items.find(x=>x.id===new URLSearchParams(location.search).get('item'));if(linked)openItem(linked);}
   if(currentItem&&!$('overlay').hidden){const updated=items.find(x=>x.id===currentItem);if(updated)openItem(updated);else closeItem()}
@@ -172,5 +179,6 @@ async function refresh(){
  finally{loading=false;$('refresh').disabled=false}
 }
 $('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();loadDocuments();
+
 
 
