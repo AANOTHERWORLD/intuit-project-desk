@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-18T20:31:07.534Z",
+  "indexedAt": "2026-11-18T20:34:54.167Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -1263,6 +1263,14 @@
         {
           "id": "2600127146334",
           "name": "BBI-0006-26 Intuit Santa Monica - Phase 2 REV B FOR APPROVAL - Feature Stair and Handrails (BINDER).pdf"
+        }
+      ]
+    },
+    "item-b085001f84fb7528a2d01fcf": {
+      "files": [
+        {
+          "id": "2600144056259",
+          "name": "RFI-086 - Conflicting Column Cover Diameters at Grid B.pdf"
         }
       ]
     },
