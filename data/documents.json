@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-12T05:01:10.396Z",
+  "indexedAt": "2026-11-18T20:17:01.792Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -324,6 +324,14 @@
         {
           "id": "2566618283939",
           "name": "RFI #2 - Floor Box Specification for Install.pdf"
+        },
+        {
+          "id": "2587677819990",
+          "name": "RFI #2 - Floor Box Specification for Install_RS response.pdf"
+        },
+        {
+          "id": "2587690333890",
+          "name": "RFI #3 - Pod Power Hookups_RS response.pdf"
         }
       ]
     },
@@ -556,7 +564,16 @@
       ]
     },
     "item-9edd72182a5c85976031c6da": {
-      "files": []
+      "files": [
+        {
+          "id": "2600123301413",
+          "name": "Intuit - Chicago - MEP Rev4 Letter.pdf"
+        },
+        {
+          "id": "2600118151148",
+          "name": "Intuit - Chicago - MEP Rev4 Set.pdf"
+        }
+      ]
     },
     "item-184a1498a1984ee39ef0ae7e": {
       "files": []
@@ -922,6 +939,10 @@
         {
           "id": "2572940891228",
           "name": "Submittal_Inuit Turbotax - Santa Monica_Inuit Turbotax - Santa Monica_2026_11_05_V2.pdf"
+        },
+        {
+          "id": "2585241310940",
+          "name": "Submittal_Inuit Turbotax - Santa Monica_Lighting - RS_MEng_LS - SSI.pdf"
         }
       ]
     },
@@ -930,6 +951,10 @@
         {
           "id": "2575228870997",
           "name": "BBI-0006-26 Intuit Santa Monica - Phase 2 REV A FOR APPROVAL - Feature Stair and Handrails (BINDER).pdf"
+        },
+        {
+          "id": "2590233983058",
+          "name": "BBI-0006-26 - Feature Stair and Handrails - SF_RS_RNR.pdf"
         }
       ]
     },
@@ -954,6 +979,10 @@
         {
           "id": "2582594336603",
           "name": "2607 - Intuit Flagship - REV00 - Updated_11.03.2026.pdf"
+        },
+        {
+          "id": "2595996572954",
+          "name": "Intuit SM Storefront_RS-MCN.pdf"
         }
       ]
     },
@@ -962,6 +991,10 @@
         {
           "id": "2583098738271",
           "name": "256478 - FULL SPECS - Tagged per Appliance Schedule.pdf"
+        },
+        {
+          "id": "2590222930961",
+          "name": "256478 - FULL SPECS - RS_MCN.pdf"
         }
       ]
     },
@@ -1090,8 +1123,128 @@
         {
           "id": "2574933883084",
           "name": "MCM Submittal Cover Sheet-#39 Tribune Tower- Millwork.pdf"
+        },
+        {
+          "id": "2600099713676",
+          "name": "MCM Submittal Cover Sheet-#39 Tribune Tower- Millwork_rapt_PBD.pdf"
         }
       ]
+    },
+    "item-7323b4394359284843013388": {
+      "files": [
+        {
+          "id": "2600084173551",
+          "name": "Intuit Flagship SM - Tile PD.pdf"
+        }
+      ]
+    },
+    "item-48eb01da00a3311a0d16b013": {
+      "files": [
+        {
+          "id": "2600087802848",
+          "name": "RFI-084 - Level 2 Toilet Accessories.pdf"
+        }
+      ]
+    },
+    "item-d68a670bf23162d35c9ba9ec": {
+      "files": [
+        {
+          "id": "2600085848524",
+          "name": "RFI-083 - Concrete Sink Wall Backing.pdf"
+        }
+      ]
+    },
+    "item-91ee2da7d8fc6f901c68d996": {
+      "files": [
+        {
+          "id": "2600097865957",
+          "name": "RFI-082 - Added Electrical, LV & Special Systems Scope.pdf"
+        }
+      ]
+    },
+    "item-35ae585eb7f4f170de792e4a": {
+      "files": [
+        {
+          "id": "2600085847028",
+          "name": "Vivreau Extra C-Tap.pdf"
+        }
+      ]
+    },
+    "item-85faccd83fb96c94613845a7": {
+      "files": [
+        {
+          "id": "2590265731030",
+          "name": "Intuit Submittals 10-28.pdf"
+        },
+        {
+          "id": "2598396743996",
+          "name": "Intuit Submittals 10-28 - MENG_RS-RR.pdf"
+        }
+      ]
+    },
+    "item-6163eadf663ad72ad9465363": {
+      "files": [
+        {
+          "id": "2590258791620",
+          "name": "Intuit - SM - Paint and Wallcovering Transmittal_RS COMMENTS.pdf"
+        },
+        {
+          "id": "2600091699973",
+          "name": "Intuit - SM - Paint and Wallcovering Transmittal.pdf"
+        }
+      ]
+    },
+    "item-813babe7d8b362e554238894": {
+      "files": [
+        {
+          "id": "2600085117317",
+          "name": "RFI-081 - Curved Barn Door Soft Close Not Available.pdf"
+        }
+      ]
+    },
+    "item-a879346441e9c26eee07a609": {
+      "files": [
+        {
+          "id": "2600096761832",
+          "name": "Submittal package 26075 Intuit Retail #34 Santa Monica 1.pdf"
+        }
+      ]
+    },
+    "item-4e5467420e7ee0da21f338db": {
+      "files": [
+        {
+          "id": "2600103524540",
+          "name": "39 Tribune Tower_Interior Sign Package_2026 11 09.pdf"
+        }
+      ]
+    },
+    "item-094dbd46681d391708e821bf": {
+      "files": [
+        {
+          "id": "2600123452294",
+          "name": "RFI-085 - Public Restroom Lavatory Faucets Code Compliance.pdf"
+        }
+      ]
+    },
+    "item-7fdcd04996a09cb30efb7547": {
+      "files": [
+        {
+          "id": "2600125681833",
+          "name": "261117-Turbo Tax Tribune Tower- DIRTT Shop Dwgs- 1.pdf"
+        }
+      ]
+    },
+    "item-fb1db4f86aa953f262b2a568": {
+      "files": []
+    },
+    "item-5319eee8186a8c4c9734ebe8": {
+      "files": []
+    },
+    "item-3ac7c80a9003ff3dd52f57bf": {
+      "files": []
+    },
+    "item-66266f0f9ca23dc0b41d2bd3": {
+      "files": []
     }
   }
 }
