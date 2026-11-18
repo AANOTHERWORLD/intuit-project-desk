@@ -6,7 +6,7 @@
   "lastSuccessfulSyncAt": "2026-11-18T20:13:55.000Z",
   "refreshIntervalMinutes": 1440,
   "filing": {
-    "connected": false,
+    "connected": true,
     "backfillPending": true,
     "failedThisRun": 0
   },
@@ -4489,5 +4489,5 @@
       "pdfStatus": "New Box links verified; full attachment inventory pending"
     }
   ],
-  "snapshotUpdatedAt": "2026-11-18T20:34:54.167Z"
+  "snapshotUpdatedAt": "2026-11-18T20:41:45.183Z"
 }
