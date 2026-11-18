@@ -176,9 +176,9 @@ async function refresh(){
   $('loadError').hidden=true;render();if(!currentItem){const linked=items.find(x=>x.id===new URLSearchParams(location.search).get('item'));if(linked)openItem(linked);}
   if(currentItem&&!$('overlay').hidden){const updated=items.find(x=>x.id===currentItem);if(updated)openItem(updated);else closeItem()}
  }catch(err){$('loadError').hidden=false;$('loadError').textContent=(loaded?'Refresh failed. Showing the last loaded data. ':'Data unavailable. Counts are not yet known. ')+err.message;$('dataStatus').textContent=loaded?'Data may be stale · refresh failed':'Shared register unavailable'}
- finally{loading=false;$('refresh').disabled=false}
+ finally{await loadDocuments();loading=false;$('refresh').disabled=false}
 }
-$('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();loadDocuments();
+$('refresh').onclick=refresh;document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},60000);render();refresh();
 
 
 
