@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-18T20:17:01.792Z",
+  "indexedAt": "2026-11-18T20:24:50.113Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -1231,6 +1231,38 @@
         {
           "id": "2600125681833",
           "name": "261117-Turbo Tax Tribune Tower- DIRTT Shop Dwgs- 1.pdf"
+        }
+      ]
+    },
+    "item-36172e25a433bb6a289ff30f": {
+      "files": [
+        {
+          "id": "2600135504893",
+          "name": "#1- Revised Shop Drawing Submittals-20261118.pdf"
+        }
+      ]
+    },
+    "item-58fb0e9b1f16f6c821905bc1": {
+      "files": [
+        {
+          "id": "2600124829577",
+          "name": "Intuit - SM - Paint and Wallcovering Transmittal II.pdf"
+        }
+      ]
+    },
+    "item-441f5b1656ff51df01715619": {
+      "files": [
+        {
+          "id": "2600129202407",
+          "name": "BBI-0006-26 Intuit Santa Monica - Phase 2 REV B - Feature Stair and Handrails - Structural Calculations (FOR EOR REVIEW).pdf"
+        },
+        {
+          "id": "2600121980561",
+          "name": "BBI-0006-26 Phase 2 Feature Stair - REV B Comment Response Log (2026-11-17).pdf"
+        },
+        {
+          "id": "2600127146334",
+          "name": "BBI-0006-26 Intuit Santa Monica - Phase 2 REV B FOR APPROVAL - Feature Stair and Handrails (BINDER).pdf"
         }
       ]
     },
