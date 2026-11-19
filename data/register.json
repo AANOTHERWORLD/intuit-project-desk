@@ -4129,7 +4129,7 @@
       "discipline": "Architect",
       "received": "2026-11-18",
       "due": "2026-11-20",
-      "sourceDate": "2026-11-18T20:30:16.000Z",
+      "sourceDate": "2026-11-18T20:47:03.000Z",
       "owner": "",
       "consultant": "",
       "priority": "Medium",
@@ -4474,20 +4474,20 @@
       "discipline": "Architect\nIntuit Design",
       "received": "2026-11-18",
       "due": "2026-11-19",
-      "sourceDate": "2026-11-18T20:13:55.000Z",
+      "sourceDate": "2026-11-18T21:07:19.000Z",
       "owner": "",
       "consultant": "",
       "priority": "Medium",
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Returned to GC",
+      "completionMethod": "Smartsheet notification; awaiting full reconciliation",
       "detectedAt": "2026-11-18T20:13:55.000Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "nextAction": "Assign a reviewer and record the next action.",
+      "nextAction": "",
       "pdfTotal": 0,
       "pdfFiled": 0,
       "pdfStatus": "New Box links verified; full attachment inventory pending"
     }
   ],
-  "snapshotUpdatedAt": "2026-11-18T23:30:45.195Z"
+  "snapshotUpdatedAt": "2026-11-19T00:30:45.011Z"
 }
