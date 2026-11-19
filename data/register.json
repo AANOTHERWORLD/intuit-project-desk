@@ -3071,23 +3071,23 @@
       "type": "RFI",
       "number": "33",
       "subject": "BOH Restroom Wall Tile",
-      "question": "Does tile in back of house restrooms only extend to 3ft AFF or does it extend floor to ceiling?  Elevation only for customer restroom on plans",
+      "question": "Does tile in back of house restrooms only extend to 3ft AFF or does it extend floor to ceiling? Elevation only for customer restroom on plans",
       "discipline": "Architect",
       "received": "2026-11-18",
       "due": "2026-11-23",
-      "sourceDate": "2026-11-18T20:28:01.000Z",
+      "sourceDate": "2026-11-18T23:40:56.000Z",
       "owner": "",
       "consultant": "",
       "priority": "Medium",
-      "status": "To assign",
-      "completionMethod": "",
+      "status": "Returned to GC",
+      "completionMethod": "Smartsheet notification; awaiting full reconciliation",
       "detectedAt": "2026-11-18T20:28:01.000Z",
       "triagedAt": "",
       "importedBaseline": false,
-      "nextAction": "Assign a reviewer and record the next action.",
+      "nextAction": "",
       "pdfTotal": 0,
       "pdfFiled": 0,
-      "pdfStatus": "Register reconciled; attachment history retained from verified Box links"
+      "pdfStatus": "New Box links verified; full attachment inventory pending"
     },
     {
       "id": "item-b085001f84fb7528a2d01fcf",
@@ -4489,5 +4489,5 @@
       "pdfStatus": "New Box links verified; full attachment inventory pending"
     }
   ],
-  "snapshotUpdatedAt": "2026-11-19T02:30:43.289Z"
+  "snapshotUpdatedAt": "2026-11-19T03:30:45.134Z"
 }
