@@ -8,7 +8,7 @@
   "filing": {
     "connected": true,
     "backfillPending": true,
-    "failedThisRun": 7
+    "failedThisRun": 8
   },
   "items": [
     {
@@ -4753,5 +4753,5 @@
       "pdfStatus": "Register reconciled; attachment history retained from verified Box links"
     }
   ],
-  "snapshotUpdatedAt": "2026-11-26T10:30:43.404Z"
+  "snapshotUpdatedAt": "2026-11-26T11:30:44.177Z"
 }
