@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-26T11:30:44.177Z",
+  "indexedAt": "2026-11-26T12:30:49.276Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -1167,6 +1167,10 @@
         {
           "id": "2600097865957",
           "name": "RFI-082 - Added Electrical, LV & Special Systems Scope.pdf"
+        },
+        {
+          "id": "2616608838871",
+          "name": "2026-1124_Intuit - SM - Rev4 Electrical Sheets.pdf"
         }
       ]
     },
@@ -1321,7 +1325,12 @@
       "files": []
     },
     "item-149180446337219bc9cea377": {
-      "files": []
+      "files": [
+        {
+          "id": "2616605409200",
+          "name": "RFI-088 - Exit Signs & Motorized Shade Power.pdf"
+        }
+      ]
     },
     "item-0273cbba6c179b44060a69dd": {
       "files": []
