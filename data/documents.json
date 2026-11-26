@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "indexedAt": "2026-11-26T09:31:02.797Z",
+  "indexedAt": "2026-11-26T10:30:43.404Z",
   "items": {
     "item-63f63ccdf400070f923401de": {
       "files": []
@@ -1151,6 +1151,10 @@
         {
           "id": "2600085848524",
           "name": "RFI-083 - Concrete Sink Wall Backing.pdf"
+        },
+        {
+          "id": "2616418288697",
+          "name": "bracket-mounting-instructions.pdf"
         }
       ]
     },
